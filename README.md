@@ -3,7 +3,7 @@
 A professional resume website showcasing software engineering experience with dynamic animations and modern design. Available in both HTML/CSS and React versions.
 
 ## 🌐 Live Website
-**[https://Peiyj.github.io/Resume](https://Peiyj.github.io/Resume)**
+**[https://peiyj.github.io/resume](https://peiyj.github.io/resume)**
 
 ## 📋 Contact Information
 - **Email**: yingjianpei2022@u.northwestern.edu
@@ -95,7 +95,7 @@ npm test
 ## 📱 Deployment Options
 
 ### GitHub Pages (Current)
-Automatically deploys from the main branch to [https://Peiyj.github.io/Resume](https://Peiyj.github.io/Resume)
+Automatically deploys from the main branch to [https://peiyj.github.io/resume](https://peiyj.github.io/resume)
 
 ### Other Platforms
 - **Netlify**: Drag and drop the build folder
