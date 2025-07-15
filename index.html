@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrick Pei - Software Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="name">Patrick Pei</h1>
+            <p class="title">Senior Software Engineer</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:yingjianpei2022@u.northwestern.edu">yingjianpei2022@u.northwestern.edu</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+18586665517">+1-858-666-5517</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/peiyj" target="_blank">github.com/peiyj</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://linkedin.com/in/patrickpei11" target="_blank">linkedin.com/in/patrickpei11</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="summary">
+            <p>Experienced Senior Software Engineer with expertise in building scalable, distributed systems and leading high-performing engineering teams. Proven track record of delivering impactful solutions that drive business growth, with experience across the full software development lifecycle at Coursera Inc.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-briefcase"></i>
+                Experience
+            </h2>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="company-info">
+                        <h3 class="company">Coursera Inc.</h3>
+                        <p class="position">Senior Software Engineer</p>
+                    </div>
+                    <div class="date">Mar 2024 – Present</div>
+                </div>
+                <ul class="achievements">
+                    <li><strong>Allowlist Management Platform:</strong> Led P0 project with 4 engineers implementing near real-time data platform for courses/specializations at contract-level, reducing customer time from 2 weeks to under 10 seconds. Built RPC microservice with Java/gRPC and implemented conflict detection using Apache Airflow.</li>
+                    <li><strong>Badge Management Platform:</strong> Led team of 3 engineers developing stream-processing platform for real-time badge management across organizations, leading to over $10M in contract ACVs. Built Kafka Connect CDC workflow with Amazon MSK for data consistency.</li>
+                    <li><strong>Internal Tools:</strong> Launched Retool-based internal management software reducing engineering time from 95 minutes to under 5 seconds. Implemented scalable batch data ingestion pipeline from AWS RDS to internal EDW tables.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="company-info">
+                        <h3 class="company">Coursera Inc.</h3>
+                        <p class="position">Software Engineer II</p>
+                    </div>
+                    <div class="date">Mar 2023 – Mar 2024</div>
+                </div>
+                <ul class="achievements">
+                    <li><strong>Clips Management Platform:</strong> Led team of 3 engineers building large-scale, fault-tolerant distributed system for clips metadata management with full CRUD operations. Achieved 80% reduction in clips metadata update time through parallel processing and multi-threading.</li>
+                    <li><strong>Performance Optimization:</strong> Implemented distributed Redis Cache reducing P95/P99 latency by 80%/92% respectively. Enforced data integrity through application-level transactions with well-defined boundaries for downstream services.</li>
+                    <li><strong>Microservices Architecture:</strong> Developed Java Spring Boot RESTful microservice for clips CRUD operations supporting concurrent, non-conflicting batch updates with distributed workload processing.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="company-info">
+                        <h3 class="company">Coursera Inc.</h3>
+                        <p class="position">Software Engineer I</p>
+                    </div>
+                    <div class="date">Jan 2022 – Mar 2023</div>
+                </div>
+                <ul class="achievements">
+                    <li><strong>Java Migration Platform:</strong> Led Contract and User service migrations from Scala to Java, phasing out 12 legacy APIs and deprecating approximately 5K lines of code. Implemented Java migration library with automated double read/write used in 15 migrations across 4 teams.</li>
+                    <li><strong>gRPC Microservices:</strong> Developed gRPC microservices: 12 APIs for contract utilization (approximately 3K QPS, 98% coverage) and 7 APIs for learner profile (approximately 200 QPS, 95% coverage) with comprehensive test coverage and performance optimization.</li>
+                    <li><strong>System Architecture:</strong> Designed and implemented scalable microservice architecture supporting high-throughput data processing and real-time updates across multiple internal teams and services.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-graduation-cap"></i>
+                Education
+            </h2>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <div class="school-info">
+                        <h3 class="school">Northwestern University</h3>
+                        <p class="degree">Master of Science in Computer Engineering</p>
+                    </div>
+                    <div class="date">Sep 2020 – Dec 2021</div>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <div class="school-info">
+                        <h3 class="school">University of California, San Diego</h3>
+                        <p class="degree">Bachelor of Science in Computer Engineering</p>
+                    </div>
+                    <div class="date">Sep 2016 – Jun 2020</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-cogs"></i>
+                Skills and Competencies
+            </h2>
+
+            <div class="skills-category">
+                <h3 class="skills-label">Languages</h3>
+                <div class="skills-tags">
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Scala</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3 class="skills-label">Technologies</h3>
+                <div class="skills-tags">
+                    <span class="skill-tag">AWS DynamoDB</span>
+                    <span class="skill-tag">AWS Lambda</span>
+                    <span class="skill-tag">AWS EKS</span>
+                    <span class="skill-tag">AWS MSK</span>
+                    <span class="skill-tag">AWS RDS</span>
+                    <span class="skill-tag">AWS Aurora</span>
+                    <span class="skill-tag">Kafka</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">MySQL</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3 class="skills-label">Frameworks</h3>
+                <div class="skills-tags">
+                    <span class="skill-tag">Spring Boot</span>
+                    <span class="skill-tag">GraphQL</span>
+                    <span class="skill-tag">gRPC</span>
+                    <span class="skill-tag">Apache Airflow</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3 class="skills-label">Tools</h3>
+                <div class="skills-tags">
+                    <span class="skill-tag">Terraform</span>
+                    <span class="skill-tag">Retool</span>
+                    <span class="skill-tag">Redis</span>
+                    <span class="skill-tag">Elasticsearch</span>
+                    <span class="skill-tag">Docker</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html> 
