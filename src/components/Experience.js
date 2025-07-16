@@ -55,16 +55,8 @@ const Experience = () => {
       title: "Software Engineering Intern",
       date: "July 2018 - August 2018", 
       location: "San Diego, CA",
-      description: "Built comprehensive data analysis tools and automated reporting systems that streamlined business operations and reduced manual reporting time by 60%. Developed web applications for internal use using Java and Spring Boot, improving workflow efficiency for 50+ employees. Contributed to database optimization projects that enhanced query performance by 45% and reduced system response times. Implemented automated data validation processes that improved data accuracy by 80% and reduced error-prone manual data entry tasks.",
-      technologies: ["Java", "SQL", "JavaScript", "Spring Boot"]
-    },
-    {
-      company: "UCSD Medical Center",
-      title: "Research Assistant",
-      date: "September 2017 - March 2018",
-      location: "San Diego, CA", 
-      description: "Conducted cutting-edge medical imaging research and developed analysis software that advanced early cancer detection methods. Built sophisticated tools for processing and analyzing large medical datasets (50GB+) using machine learning techniques, contributing to research published in 3 peer-reviewed journals. Developed image processing algorithms that improved diagnostic accuracy by 25% and reduced analysis time by 70%. Collaborated with radiologists and medical researchers to translate complex technical requirements into practical software solutions that enhanced clinical workflows.",
-      technologies: ["Python", "MATLAB", "SQL"]
+      description: "Collaborated on enhancing underground vehicle sensor accuracy using C++, increasing precision from 70% to 90%. Optimized image processing speed by 80% by using multithreading and the fan-out pattern in C++.",
+      technologies: ["C++", "Image Processing", "Multithreading"]
     }
   ];
 

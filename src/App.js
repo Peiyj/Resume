@@ -42,9 +42,9 @@ function App() {
       <Header darkMode={darkMode} toggleTheme={toggleTheme} />
       <Background />
       <Experience />
-      <Skills />
       <Entrepreneurship />
       <Education />
+      <Skills />
       <Footer />
     </div>
   );

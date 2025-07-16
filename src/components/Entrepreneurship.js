@@ -12,17 +12,15 @@ const Entrepreneurship = () => {
         </div>
         <h4>💡 Co-Founder & CTO</h4>
         <p>
-          Co-founded a mobile application startup focused on connecting sneaker enthusiasts and collectors. 
-          Led the technical development of iOS and Android applications serving over 1,000 users. 
-          Built a comprehensive platform featuring real-time chat, marketplace functionality, and social networking capabilities. 
-          Successfully raised initial funding and established partnerships with local sneaker retailers.
+          Developed the Solemate iOS App using Swift and Objective C for 1.8K daily active patients who have ankle injuries.
+          Designed adaptive UI with CSS to display the rehabilitation data and send it to their doctors using Firestore and ML kit.
         </p>
         <div className="technologies">
           <span>Swift</span>
           <span>Objective C</span>
-          <span>Java</span>
-          <span>Firebase</span>
+          <span>CSS</span>
           <span>Firestore</span>
+          <span>ML Kit</span>
         </div>
       </div>
     </section>
