@@ -4,19 +4,19 @@ const Skills = () => {
   const skillCategories = [
     {
       label: "Languages",
-      skills: ["Java", "Scala", "JavaScript", "Python", "SQL"]
+      skills: ["Java", "Scala", "JavaScript", "TypeScript", "Python", "GoLang", "C++", "Swift", "Objective C", "SQL"]
     },
     {
       label: "Technologies",
-      skills: ["AWS DynamoDB", "AWS Lambda", "AWS EKS", "AWS MSK", "AWS RDS", "AWS Aurora", "Kafka", "PostgreSQL", "MySQL"]
+      skills: ["AWS DynamoDB", "AWS Lambda", "AWS EKS", "AWS MSK", "AWS RDS", "AWS Aurora", "Kafka", "PostgreSQL", "MySQL", "MongoDB", "Firebase", "Firestore", "ML Kit"]
     },
     {
       label: "Frameworks",
-      skills: ["Spring Boot", "GraphQL", "gRPC", "Apache Airflow"]
+      skills: ["Spring Boot", "React", "Angular", "Angular.js", "Node.js", "Ember.js", "Ember Data", "GraphQL", "gRPC", "Apache Airflow", "Chart.js", "JavaFX"]
     },
     {
       label: "Tools",
-      skills: ["Terraform", "Retool", "Redis", "Elasticsearch", "Docker"]
+      skills: ["Terraform", "Retool", "Redis", "Elasticsearch", "Docker", "GitHub Actions", "MS TFS", "Handlebars"]
     }
   ];
 

@@ -1,9 +1,21 @@
 import React from 'react';
+import useDarkMode from '../hooks/useDarkMode';
 
 const Header = () => {
+  const [isDarkMode, toggleDarkMode] = useDarkMode();
+
   return (
     <header className="header">
-      <h1 className="name">Patrick Pei</h1>
+      <div className="header-top">
+        <h1 className="name">Patrick Pei</h1>
+        <button 
+          className="dark-mode-toggle" 
+          onClick={toggleDarkMode}
+          aria-label="Toggle dark mode"
+        >
+          <i className={`fas ${isDarkMode ? 'fa-sun' : 'fa-moon'}`}></i>
+        </button>
+      </div>
       <p className="title">Senior Software Engineer</p>
       
       <div className="contact-info">

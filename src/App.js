@@ -7,18 +7,22 @@ import Internships from './components/Internships';
 import Entrepreneurship from './components/Entrepreneurship';
 import Education from './components/Education';
 import Skills from './components/Skills';
+import FloatingShapes from './components/FloatingShapes';
 
 function App() {
   return (
-    <div className="container">
-      <Header />
-      <Summary />
-      <Experience />
-      <Internships />
-      <Entrepreneurship />
-      <Education />
-      <Skills />
-    </div>
+    <>
+      <div className="container">
+        <Header />
+        <Summary />
+        <Experience />
+        <Internships />
+        <Entrepreneurship />
+        <Education />
+        <Skills />
+      </div>
+      <FloatingShapes />
+    </>
   );
 }
 
