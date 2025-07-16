@@ -20,15 +20,15 @@ const Education = () => {
 
   return (
     <section className="education">
-      <h2>Education</h2>
+      <h2>🎓 Education</h2>
       {education.map((edu, index) => (
         <div key={index} className="job">
           <div className="job-header">
-            <h3>{edu.school}</h3>
-            <span className="date">{edu.date}</span>
-            <span className="location">{edu.location}</span>
+            <h3>🏫 {edu.school}</h3>
+            <span className="date">📅 {edu.date}</span>
+            <span className="location">📍 {edu.location}</span>
           </div>
-          <h4>{edu.degree}</h4>
+          <h4>📚 {edu.degree}</h4>
           <p className="gpa">GPA: {edu.gpa}</p>
         </div>
       ))}

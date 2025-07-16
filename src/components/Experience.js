@@ -50,35 +50,35 @@ const Experience = () => {
     {
       company: "C2 Group",
       title: "Software Engineering Intern",
-      date: "June 2018 - September 2018", 
+      date: "July 2018 - August 2018", 
       location: "San Diego, CA",
-      description: "Built customer relationship management systems and automated business workflows. Developed web applications using modern frameworks and integrated third-party APIs for enhanced functionality.",
-      technologies: ["JavaScript", "Angular", "Node.js", "MySQL", "AWS"]
+      description: "Built data analysis tools and automated reporting systems. Developed web applications for internal use and contributed to database optimization projects.",
+      technologies: ["Java", "SQL", "JavaScript", "Spring Boot"]
     },
     {
       company: "UCSD Medical Center",
-      title: "Software Engineering Intern",
-      date: "January 2018 - June 2018",
+      title: "Research Assistant",
+      date: "September 2017 - March 2018",
       location: "San Diego, CA", 
-      description: "Developed healthcare management systems and patient data visualization tools. Built secure web applications handling sensitive medical data with strict compliance requirements.",
-      technologies: ["Java", "Spring Boot", "JavaScript", "PostgreSQL", "Docker"]
+      description: "Conducted medical imaging research and developed analysis software. Built tools for processing and analyzing large medical datasets using machine learning techniques.",
+      technologies: ["Python", "MATLAB", "SQL"]
     }
   ];
 
   return (
     <section className="experience">
-      <h2>Experience</h2>
-      {experiences.map((job, index) => (
+      <h2>💼 Professional Experience</h2>
+      {experiences.map((experience, index) => (
         <div key={index} className="job">
           <div className="job-header">
-            <h3>{job.company}</h3>
-            <span className="date">{job.date}</span>
-            {job.location && <span className="location">{job.location}</span>}
+            <h3>🏢 {experience.company}</h3>
+            <span className="date">📅 {experience.date}</span>
+            {experience.location && <span className="location">📍 {experience.location}</span>}
           </div>
-          <h4>{job.title}</h4>
-          <p>{job.description}</p>
+          <h4>👨‍💻 {experience.title}</h4>
+          <p>{experience.description}</p>
           <div className="technologies">
-            {job.technologies.map((tech, techIndex) => (
+            {experience.technologies.map((tech, techIndex) => (
               <span key={techIndex}>{tech}</span>
             ))}
           </div>
