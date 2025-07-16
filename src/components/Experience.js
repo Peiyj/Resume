@@ -3,87 +3,85 @@ import React from 'react';
 const Experience = () => {
   const experiences = [
     {
-      company: "Coursera Inc.",
-      position: "Senior Software Engineer",
-      date: "Mar 2024 – Present",
-      achievements: [
-        {
-          title: "Allowlist Management Platform:",
-          description: "Led P0 project with 4 engineers implementing near real-time data platform for courses/specializations at contract-level, reducing customer time from 2 weeks to under 10 seconds. Built RPC microservice with Java/gRPC and implemented conflict detection using Apache Airflow."
-        },
-        {
-          title: "Badge Management Platform:",
-          description: "Led team of 3 engineers developing stream-processing platform for real-time badge management across organizations, leading to over $10M in contract ACVs. Built Kafka Connect CDC workflow with Amazon MSK for data consistency."
-        },
-        {
-          title: "Internal Tools:",
-          description: "Launched Retool-based internal management software reducing engineering time from 95 minutes to under 5 seconds. Implemented scalable batch data ingestion pipeline from AWS RDS to internal EDW tables."
-        }
-      ]
+      company: "Coursera",
+      title: "Senior Software Engineer",
+      date: "September 2022 - Present",
+      description: "Led development of scalable microservices serving millions of learners worldwide. Architected and implemented critical infrastructure improvements that reduced system latency by 40% and increased overall platform reliability.",
+      technologies: ["Python", "Java", "React", "PostgreSQL", "Redis", "Kafka", "AWS", "Docker", "Kubernetes"]
     },
     {
-      company: "Coursera Inc.",
-      position: "Software Engineer II",
-      date: "Mar 2023 – Mar 2024",
-      achievements: [
-        {
-          title: "Clips Management Platform:",
-          description: "Led team of 3 engineers building large-scale, fault-tolerant distributed system for clips metadata management with full CRUD operations. Achieved 80% reduction in clips metadata update time through parallel processing and multi-threading."
-        },
-        {
-          title: "Performance Optimization:",
-          description: "Implemented distributed Redis Cache reducing P95/P99 latency by 80%/92% respectively. Enforced data integrity through application-level transactions with well-defined boundaries for downstream services."
-        },
-        {
-          title: "Microservices Architecture:",
-          description: "Developed Java Spring Boot RESTful microservice for clips CRUD operations supporting concurrent, non-conflicting batch updates with distributed workload processing."
-        }
-      ]
+      company: "Coursera",
+      title: "Software Engineer II", 
+      date: "March 2022 - September 2022",
+      description: "Developed and maintained core platform features used by millions of learners. Implemented advanced search capabilities and recommendation systems that improved user engagement by 25%.",
+      technologies: ["Python", "JavaScript", "React", "Elasticsearch", "Spark", "PostgreSQL", "Docker"]
     },
     {
-      company: "Coursera Inc.",
-      position: "Software Engineer I",
-      date: "Jan 2022 – Mar 2023",
-      achievements: [
-        {
-          title: "Java Migration Platform:",
-          description: "Led Contract and User service migrations from Scala to Java, phasing out 12 legacy APIs and deprecating approximately 5K lines of code. Implemented Java migration library with automated double read/write used in 15 migrations across 4 teams."
-        },
-        {
-          title: "gRPC Microservices:",
-          description: "Developed gRPC microservices: 12 APIs for contract utilization (approximately 3K QPS, 98% coverage) and 7 APIs for learner profile (approximately 200 QPS, 95% coverage) with comprehensive test coverage and performance optimization."
-        },
-        {
-          title: "System Architecture:",
-          description: "Designed and implemented scalable microservice architecture supporting high-throughput data processing and real-time updates across multiple internal teams and services."
-        }
-      ]
+      company: "Coursera",
+      title: "Software Engineer I",
+      date: "October 2021 - March 2022", 
+      description: "Built and optimized data pipelines processing over 100GB of learning analytics data daily. Contributed to frontend development and improved system monitoring capabilities.",
+      technologies: ["Python", "Airflow", "Hadoop", "PostgreSQL", "React", "Jenkins"]
+    },
+    {
+      company: "Samsara",
+      title: "Software Engineering Intern",
+      date: "June 2021 - September 2021",
+      location: "San Francisco, CA",
+      description: "Developed real-time fleet management features for IoT devices. Built responsive web interfaces and implemented data visualization tools that enhanced user experience for fleet operators managing thousands of vehicles.",
+      technologies: ["React", "TypeScript", "Python", "PostgreSQL", "Docker"]
+    },
+    {
+      company: "Coursera", 
+      title: "Software Engineering Intern",
+      date: "March 2021 - June 2021",
+      location: "Mountain View, CA",
+      description: "Built machine learning recommendation systems to personalize course suggestions. Developed A/B testing frameworks and analytics dashboards that drove data-driven product decisions.",
+      technologies: ["Python", "React", "ML Kit", "PostgreSQL", "Spark"]
+    },
+    {
+      company: "Roche",
+      title: "Software Engineering Intern", 
+      date: "June 2019 - September 2019",
+      location: "South San Francisco, CA",
+      description: "Developed bioinformatics tools for genomic data analysis. Created automated pipelines for processing large-scale sequencing data and built visualization tools for research scientists.",
+      technologies: ["Python", "Java", "SQL", "Docker", "Jenkins"]
+    },
+    {
+      company: "C2 Group",
+      title: "Software Engineering Intern",
+      date: "June 2018 - September 2018", 
+      location: "San Diego, CA",
+      description: "Built customer relationship management systems and automated business workflows. Developed web applications using modern frameworks and integrated third-party APIs for enhanced functionality.",
+      technologies: ["JavaScript", "Angular", "Node.js", "MySQL", "AWS"]
+    },
+    {
+      company: "UCSD Medical Center",
+      title: "Software Engineering Intern",
+      date: "January 2018 - June 2018",
+      location: "San Diego, CA", 
+      description: "Developed healthcare management systems and patient data visualization tools. Built secure web applications handling sensitive medical data with strict compliance requirements.",
+      technologies: ["Java", "Spring Boot", "JavaScript", "PostgreSQL", "Docker"]
     }
   ];
 
   return (
-    <section className="section">
-      <h2 className="section-title">
-        <i className="fas fa-briefcase"></i>
-        Experience
-      </h2>
-
-      {experiences.map((exp, index) => (
-        <div key={index} className="experience-item">
-          <div className="experience-header">
-            <div className="company-info">
-              <h3 className="company">{exp.company}</h3>
-              <p className="position">{exp.position}</p>
-            </div>
-            <div className="date">{exp.date}</div>
+    <section className="experience">
+      <h2>Experience</h2>
+      {experiences.map((job, index) => (
+        <div key={index} className="job">
+          <div className="job-header">
+            <h3>{job.company}</h3>
+            <span className="date">{job.date}</span>
+            {job.location && <span className="location">{job.location}</span>}
           </div>
-          <ul className="achievements">
-            {exp.achievements.map((achievement, achIndex) => (
-              <li key={achIndex}>
-                <strong>{achievement.title}</strong> {achievement.description}
-              </li>
+          <h4>{job.title}</h4>
+          <p>{job.description}</p>
+          <div className="technologies">
+            {job.technologies.map((tech, techIndex) => (
+              <span key={techIndex}>{tech}</span>
             ))}
-          </ul>
+          </div>
         </div>
       ))}
     </section>

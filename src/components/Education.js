@@ -5,31 +5,31 @@ const Education = () => {
     {
       school: "Northwestern University",
       degree: "Master of Science in Computer Engineering",
-      date: "Sep 2020 – Dec 2021"
+      date: "September 2020 - June 2021",
+      location: "Evanston, IL",
+      gpa: "4.0/4.0"
     },
     {
       school: "University of California, San Diego",
-      degree: "Bachelor of Science in Computer Engineering",
-      date: "Sep 2016 – Jun 2020"
+      degree: "Bachelor of Science in Computer Engineering", 
+      date: "September 2016 - June 2020",
+      location: "La Jolla, CA",
+      gpa: "3.7/4.0"
     }
   ];
 
   return (
-    <section className="section">
-      <h2 className="section-title">
-        <i className="fas fa-graduation-cap"></i>
-        Education
-      </h2>
-
+    <section className="education">
+      <h2>Education</h2>
       {education.map((edu, index) => (
-        <div key={index} className="education-item">
-          <div className="education-header">
-            <div className="school-info">
-              <h3 className="school">{edu.school}</h3>
-              <p className="degree">{edu.degree}</p>
-            </div>
-            <div className="date">{edu.date}</div>
+        <div key={index} className="job">
+          <div className="job-header">
+            <h3>{edu.school}</h3>
+            <span className="date">{edu.date}</span>
+            <span className="location">{edu.location}</span>
           </div>
+          <h4>{edu.degree}</h4>
+          <p className="gpa">GPA: {edu.gpa}</p>
         </div>
       ))}
     </section>
