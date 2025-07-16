@@ -1,4 +1,4 @@
-name: Deploy React App to Pages
+name: Deploy React App to Pages with Docker
 
 on:
   # Runs on pushes targeting the default branch
@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Build and deploy job
+  # Build and deploy job using Docker
   build-and-deploy:
     environment:
       name: github-pages
@@ -31,18 +31,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        
+      - name: Build React app with Docker
+        run: |
+          # Build the Docker image
+          docker build -t resume-app .
           
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
-        
-      - name: Build React app
-        run: npm run build
-        
+          # Create a container and extract the built files
+          docker create --name temp-container resume-app
+          docker cp temp-container:/usr/share/nginx/html ./build
+          docker rm temp-container
+          
       - name: Setup Pages
         uses: actions/configure-pages@v5
         
