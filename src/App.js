@@ -8,14 +8,19 @@ import Education from './components/Education';
 import Footer from './components/Footer';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true); // Default to dark mode
 
   // Load saved theme preference on component mount
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
+    if (savedTheme === 'light') {
+      setDarkMode(false);
+      document.body.classList.remove('dark-theme');
+    } else {
+      // Default to dark mode if no preference is saved
       setDarkMode(true);
       document.body.classList.add('dark-theme');
+      localStorage.setItem('theme', 'dark');
     }
   }, []);
 
@@ -36,8 +41,8 @@ function App() {
     <div className="container">
       <Header darkMode={darkMode} toggleTheme={toggleTheme} />
       <Background />
-      <Skills />
       <Experience />
+      <Skills />
       <Entrepreneurship />
       <Education />
       <Footer />
