@@ -553,27 +553,43 @@ strong {
 /* Responsive design */
 @media (max-width: 768px) {
     .container {
-        padding: 40px 20px;
+        padding: 30px 16px;
     }
     
     .header {
-        margin-bottom: 60px;
+        margin-bottom: 50px;
     }
     
     .header h1 {
-        font-size: 2.25rem;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 0;
     }
     
     .header-top {
-        margin-bottom: 30px;
+        margin-bottom: 25px;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .theme-toggle {
+        align-self: center;
+        width: auto;
+        padding: 8px 16px;
     }
     
     .intro h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        text-align: center;
     }
     
-        .intro p {
-        font-size: 1rem;
+    .intro p {
+        font-size: 0.95rem;
+        text-align: center;
+        max-width: 100%;
+        line-height: 1.6;
     }
     
     /* Mobile photo layout */
@@ -581,90 +597,183 @@ strong {
         flex-direction: column;
         text-align: center;
         gap: 20px;
+        align-items: center;
     }
     
     .profile-image {
-        width: 130px;
-        height: 130px;
+        width: 120px;
+        height: 120px;
+    }
+    
+    .intro-text {
+        width: 100%;
+    }
+    
+    .contact h3 {
+        font-size: 1.1rem;
+        text-align: center;
+        line-height: 1.5;
+    }
+    
+    .contact a {
+        word-break: break-all;
     }
 
     h2 {
-        font-size: 1.75rem;
-        margin-bottom: 30px;
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+        text-align: center;
     }
     
     .job {
-        padding: 24px;
-        margin-bottom: 40px;
+        padding: 20px 16px;
+        margin-bottom: 30px;
     }
     
     .job-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
+        text-align: left;
     }
     
     .job-header h3 {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+    
+    .job-header .date,
+    .job-header .location {
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+    }
+    
+    .job h4 {
+        font-size: 1.05rem;
+        margin: 10px 0;
+    }
+    
+    .job p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+    
+    .skill-category {
+        margin-bottom: 30px;
+    }
+    
+    .skill-category h3 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        text-align: center;
     }
     
     .skill-category ul {
         gap: 8px;
+        justify-content: center;
     }
     
     .skill-category li {
-        font-size: 0.8rem;
-        padding: 6px 12px;
+        font-size: 0.75rem;
+        padding: 6px 10px;
     }
     
     .technologies {
-        gap: 8px;
+        gap: 6px;
+        justify-content: center;
     }
     
     .technologies span {
-        font-size: 0.75rem;
-        padding: 5px 10px;
+        font-size: 0.7rem;
+        padding: 4px 8px;
     }
     
     .footer-links {
         flex-direction: column;
         gap: 16px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-links a {
+        font-size: 0.9rem;
+        padding: 8px 0;
     }
     
     .background {
-        padding: 30px;
+        padding: 20px 16px;
     }
     
     section {
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 30px 16px;
+        padding: 20px 12px;
     }
     
     .header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .header-top {
-        flex-direction: column;
-        gap: 20px;
-        align-items: flex-start;
+        gap: 12px;
     }
     
     .theme-toggle {
-        align-self: flex-end;
+        font-size: 0.8rem;
+        padding: 6px 12px;
+        height: 32px;
+    }
+    
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .intro h2 {
+        font-size: 1.25rem;
+    }
+    
+    .intro p {
+        font-size: 0.9rem;
+    }
+    
+    .contact h3 {
+        font-size: 1rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
     }
     
     .job {
-        padding: 20px;
+        padding: 16px 12px;
+        margin-bottom: 25px;
+    }
+    
+    .job-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .job h4 {
+        font-size: 1rem;
+    }
+    
+    .job p {
+        font-size: 0.85rem;
+    }
+    
+    .skill-category h3 {
+        font-size: 1rem;
     }
     
     .background {
-        padding: 24px;
+        padding: 16px 12px;
     }
 }
 
