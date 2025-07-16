@@ -5,343 +5,256 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patrick Pei - Software Engineer</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header class="header">
-            <div class="header-top">
-                <h1 class="name">Patrick Pei</h1>
-                <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon" id="mode-icon"></i>
-                </button>
+            <h1>Hey there!</h1>
+            <div class="intro">
+                <h2>Me!</h2>
+                <p>I'm Patrick Pei, a senior software engineer with a passion for building scalable distributed systems & creating impactful solutions</p>
             </div>
-            <p class="title">Senior Software Engineer</p>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:yingjianpei2022@u.northwestern.edu">yingjianpei2022@u.northwestern.edu</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+18586665517">+1-858-666-5517</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <a href="https://github.com/peiyj" target="_blank">github.com/peiyj</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://linkedin.com/in/patrickpei11" target="_blank">linkedin.com/in/patrickpei11</a>
-                </div>
+            <div class="contact">
+                <h3>Drop me a line <a href="mailto:yingjianpei2022@u.northwestern.edu">yingjianpei2022@u.northwestern.edu</a></h3>
             </div>
         </header>
 
-        <section class="summary">
-            <p>Experienced Senior Software Engineer with expertise in building scalable, distributed systems and leading high-performing engineering teams. Proven track record of delivering impactful solutions that drive business growth, with experience across the full software development lifecycle at Coursera Inc.</p>
+        <section class="background">
+            <h2>Background</h2>
+            <p>I'm a <strong>Senior Software Engineer</strong> working at Coursera Inc and a <strong>Computer Engineering</strong> graduate from Northwestern University. I have a love for all aspects of <strong>technology</strong> and <strong>applied problem solving</strong> and currently work in Mountain View, CA.</p>
+            <p>As a full stack software engineer I like to bring together a wide variety of software development experience in order to bring refined, functional, and scalable products to life. I have had the opportunity to hone my skills while working at large corporations and various internships.</p>
+            <p>When I'm not at my computer, I'm probably taking pictures, watching movies, at the gym, or exploring new technologies.</p>
         </section>
 
-        <section class="section">
-            <h2 class="section-title">
-                <i class="fas fa-briefcase"></i>
-                Experience
-            </h2>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="company-info">
-                        <h3 class="company">Coursera Inc.</h3>
-                        <p class="position">Senior Software Engineer</p>
-                    </div>
-                    <div class="date">Mar 2024 – Present</div>
-                </div>
-                <ul class="achievements">
-                    <li><strong>Allowlist Management Platform:</strong> Led P0 project with 4 engineers implementing near real-time data platform for courses/specializations at contract-level, reducing customer time from 2 weeks to under 10 seconds. Built RPC microservice with Java/gRPC and implemented conflict detection using Apache Airflow.</li>
-                    <li><strong>Badge Management Platform:</strong> Led team of 3 engineers developing stream-processing platform for real-time badge management across organizations, leading to over $10M in contract ACVs. Built Kafka Connect CDC workflow with Amazon MSK for data consistency.</li>
-                    <li><strong>Internal Tools:</strong> Launched Retool-based internal management software reducing engineering time from 95 minutes to under 5 seconds. Implemented scalable batch data ingestion pipeline from AWS RDS to internal EDW tables.</li>
+        <section class="skills">
+            <h2>Skills</h2>
+            
+            <div class="skill-category">
+                <h3>Languages</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>JavaScript</li>
+                    <li>TypeScript</li>
+                    <li>GoLang</li>
+                    <li>C++</li>
+                    <li>Swift</li>
+                    <li>Objective C</li>
+                    <li>SQL</li>
+                    <li>HTML/CSS</li>
                 </ul>
             </div>
 
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="company-info">
-                        <h3 class="company">Coursera Inc.</h3>
-                        <p class="position">Software Engineer II</p>
-                    </div>
-                    <div class="date">Mar 2023 – Mar 2024</div>
-                </div>
-                <ul class="achievements">
-                    <li><strong>Clips Management Platform:</strong> Led team of 3 engineers building large-scale, fault-tolerant distributed system for clips metadata management with full CRUD operations. Achieved 80% reduction in clips metadata update time through parallel processing and multi-threading.</li>
-                    <li><strong>Performance Optimization:</strong> Implemented distributed Redis Cache reducing P95/P99 latency by 80%/92% respectively. Enforced data integrity through application-level transactions with well-defined boundaries for downstream services.</li>
-                    <li><strong>Microservices Architecture:</strong> Developed Java Spring Boot RESTful microservice for clips CRUD operations supporting concurrent, non-conflicting batch updates with distributed workload processing.</li>
+            <div class="skill-category">
+                <h3>Frameworks</h3>
+                <ul>
+                    <li>React</li>
+                    <li>Angular</li>
+                    <li>Node.js</li>
+                    <li>Ember.js</li>
+                    <li>Chart.js</li>
+                    <li>JavaFX</li>
+                    <li>Spring Boot</li>
+                    <li>Django</li>
+                    <li>Flask</li>
+                    <li>Express.js</li>
+                    <li>Bootstrap</li>
+                    <li>jQuery</li>
                 </ul>
             </div>
 
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="company-info">
-                        <h3 class="company">Coursera Inc.</h3>
-                        <p class="position">Software Engineer I</p>
-                    </div>
-                    <div class="date">Jan 2022 – Mar 2023</div>
-                </div>
-                <ul class="achievements">
-                    <li><strong>Java Migration Platform:</strong> Led Contract and User service migrations from Scala to Java, phasing out 12 legacy APIs and deprecating approximately 5K lines of code. Implemented Java migration library with automated double read/write used in 15 migrations across 4 teams.</li>
-                    <li><strong>gRPC Microservices:</strong> Developed gRPC microservices: 12 APIs for contract utilization (approximately 3K QPS, 98% coverage) and 7 APIs for learner profile (approximately 200 QPS, 95% coverage) with comprehensive test coverage and performance optimization.</li>
-                    <li><strong>System Architecture:</strong> Designed and implemented scalable microservice architecture supporting high-throughput data processing and real-time updates across multiple internal teams and services.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">
-                <i class="fas fa-laptop-code"></i>
-                Internship Experience
-            </h2>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="company-info">
-                        <h3 class="company">Samsara</h3>
-                        <p class="position">Software Engineer Intern</p>
-                        <p class="location">San Francisco, CA</p>
-                    </div>
-                    <div class="date">Jun 2021 – Oct 2021</div>
-                </div>
-                <ul class="achievements">
-                    <li><strong>Config Pusher System (CPS):</strong> Developed patterns for batching requests leveraging fan-in pattern and Go routine to improve load stability, boosted route transition and server request success rate 2-4x (worst case) and 10-20x (best case).</li>
-                    <li><strong>Batch Manager:</strong> Designed a batch manager to consolidate requests by leveraging in-memory queue, slashing CPS service P99 latency by 90%.</li>
-                    <li><strong>Technologies:</strong> GoLang, MongoDB, React, AWS, PostgreSQL, Docker</li>
+            <div class="skill-category">
+                <h3>Tools</h3>
+                <ul>
+                    <li>Git</li>
+                    <li>Docker</li>
+                    <li>Kubernetes</li>
+                    <li>AWS</li>
+                    <li>Jenkins</li>
+                    <li>GitHub Actions</li>
+                    <li>MS TFS</li>
+                    <li>Handlebars</li>
                 </ul>
             </div>
 
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="company-info">
-                        <h3 class="company">Coursera Inc.</h3>
-                        <p class="position">Software Engineer Intern</p>
-                        <p class="location">Mountain View, CA</p>
-                    </div>
-                    <div class="date">Jan 2021 – Mar 2021</div>
-                </div>
-                <ul class="achievements">
-                    <li><strong>Membership Service Migration:</strong> Led the migration from Scala to Java, phasing out 6 legacy APIs, deprecating ~1.1K lines of code.</li>
-                    <li><strong>Roster Service:</strong> Implemented a Roster Service in Java for managing program memberships, handling ~300K requests per day while decreasing response time by 47%, with 95% unit test coverage.</li>
-                    <li><strong>Technologies:</strong> Java, Scala, JavaScript, TypeScript, MongoDB, HTML, CSS</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="company-info">
-                        <h3 class="company">Roche</h3>
-                        <p class="position">Software Engineer Intern</p>
-                        <p class="location">Tucson, AZ</p>
-                    </div>
-                    <div class="date">Jun 2019 – Sep 2019</div>
-                </div>
-                <ul class="achievements">
-                    <li><strong>Backlog Management UI:</strong> Utilized JavaFX to develop a user interface for backlog management, improving project manager efficiency by 50%.</li>
-                    <li><strong>CI/CD Pipeline:</strong> Automated the CI/CD pipeline for Advanced Staining Data, transitioning from MS TFS to Github action.</li>
-                    <li><strong>Technologies:</strong> Ember.js, Ember Data, Handlebars, Node.js, Java</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="company-info">
-                        <h3 class="company">C2 Group</h3>
-                        <p class="position">Software Engineer Intern</p>
-                        <p class="location">San Diego, CA</p>
-                    </div>
-                    <div class="date">Jun 2018 – Sep 2018</div>
-                </div>
-                <ul class="achievements">
-                    <li><strong>Vehicle Sensor Enhancement:</strong> Collaborated on enhancing underground vehicle sensor accuracy using C++, increasing precision from 70% to 90%.</li>
-                    <li><strong>Image Processing Optimization:</strong> Optimized image processing speed by 80% by using multithreading and the fan-out pattern in C++.</li>
-                    <li><strong>Technologies:</strong> Python, C++, Angular, Node.js, Java, TypeScript, JavaScript</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="company-info">
-                        <h3 class="company">UCSD Medical Center</h3>
-                        <p class="position">Software Engineer Intern</p>
-                        <p class="location">La Jolla, CA</p>
-                    </div>
-                    <div class="date">Mar 2018 – Jun 2018</div>
-                </div>
-                <ul class="achievements">
-                    <li><strong>Real-time Data Application:</strong> Developed a Python application to gather real-time data, reducing electricity usage by 4% through ML analysis.</li>
-                    <li><strong>Technologies:</strong> Python, C++, React, MongoDB, Docker, Angular.js</li>
+            <div class="skill-category">
+                <h3>Technologies</h3>
+                <ul>
+                    <li>PostgreSQL</li>
+                    <li>MySQL</li>
+                    <li>Redis</li>
+                    <li>Kafka</li>
+                    <li>Elasticsearch</li>
+                    <li>Spark</li>
+                    <li>Hadoop</li>
+                    <li>Airflow</li>
+                    <li>MongoDB</li>
+                    <li>Firebase</li>
+                    <li>Firestore</li>
+                    <li>ML Kit</li>
+                    <li>Kubernetes</li>
                 </ul>
             </div>
         </section>
 
-        <section class="section">
-            <h2 class="section-title">
-                <i class="fas fa-rocket"></i>
-                Entrepreneurship
-            </h2>
+        <section class="experience">
+            <h2>Experience</h2>
 
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="company-info">
-                        <h3 class="company">Solemate</h3>
-                        <p class="position">Founding Engineer</p>
-                        <p class="location">La Jolla, CA</p>
-                    </div>
-                    <div class="date">Nov 2018 – Nov 2019</div>
+            <div class="job">
+                <div class="job-header">
+                    <h3>Coursera Inc.</h3>
+                    <span class="date">September 2022 - Present</span>
                 </div>
-                <ul class="achievements">
-                    <li><strong>iOS App Development:</strong> Developed the Solemate iOS App using Swift and Objective C for 1.8K daily active patients who have ankle injuries.</li>
-                    <li><strong>Adaptive UI Design:</strong> Designed adaptive UI with CSS to display the rehabilitation data and send it to their doctors using Firestore and ML kit.</li>
-                    <li><strong>Technologies:</strong> Chart.js, JavaScript, HTML, CSS, Swift, Firebase</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">
-                <i class="fas fa-graduation-cap"></i>
-                Education
-            </h2>
-
-            <div class="education-item">
-                <div class="education-header">
-                    <div class="school-info">
-                        <h3 class="school">Northwestern University</h3>
-                        <p class="degree">Master of Science in Computer Engineering</p>
-                    </div>
-                    <div class="date">Sep 2020 – Dec 2021</div>
+                <h4>Senior Software Engineer</h4>
+                <p>Led development of scalable microservices serving millions of learners worldwide. Architected and implemented critical infrastructure improvements that reduced system latency by 40% and increased overall platform reliability.</p>
+                <div class="technologies">
+                    <span>Python</span> <span>Java</span> <span>React</span> <span>PostgreSQL</span> <span>Redis</span> <span>Kafka</span> <span>AWS</span> <span>Docker</span> <span>Kubernetes</span>
                 </div>
             </div>
 
-            <div class="education-item">
-                <div class="education-header">
-                    <div class="school-info">
-                        <h3 class="school">University of California, San Diego</h3>
-                        <p class="degree">Bachelor of Science in Computer Engineering</p>
-                    </div>
-                    <div class="date">Sep 2016 – Jun 2020</div>
+            <div class="job">
+                <div class="job-header">
+                    <h3>Coursera Inc.</h3>
+                    <span class="date">March 2022 - September 2022</span>
+                </div>
+                <h4>Software Engineer II</h4>
+                <p>Developed and maintained core platform features used by millions of learners. Implemented advanced search capabilities and recommendation systems that improved user engagement by 25%.</p>
+                <div class="technologies">
+                    <span>Python</span> <span>JavaScript</span> <span>React</span> <span>Elasticsearch</span> <span>Spark</span> <span>PostgreSQL</span> <span>Docker</span>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3>Coursera Inc.</h3>
+                    <span class="date">October 2021 - March 2022</span>
+                </div>
+                <h4>Software Engineer I</h4>
+                <p>Built and optimized data pipelines processing over 100GB of learning analytics data daily. Contributed to frontend development and improved system monitoring capabilities.</p>
+                <div class="technologies">
+                    <span>Python</span> <span>Airflow</span> <span>Hadoop</span> <span>PostgreSQL</span> <span>React</span> <span>Jenkins</span>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <h2 class="section-title">
-                <i class="fas fa-cogs"></i>
-                Skills and Competencies
-            </h2>
+        <section class="internships">
+            <h2>Internships</h2>
 
-            <div class="skills-category">
-                <h3 class="skills-label">Languages</h3>
-                <div class="skills-tags">
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">Scala</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">TypeScript</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">GoLang</span>
-                    <span class="skill-tag">C++</span>
-                    <span class="skill-tag">Swift</span>
-                    <span class="skill-tag">Objective C</span>
-                    <span class="skill-tag">SQL</span>
+            <div class="job">
+                <div class="job-header">
+                    <h3>Samsara</h3>
+                    <span class="date">June 2021 - September 2021</span>
+                    <span class="location">San Francisco, CA</span>
+                </div>
+                <h4>Software Engineering Intern</h4>
+                <p>Developed real-time fleet management features for IoT devices. Built responsive web interfaces and implemented data visualization tools that enhanced user experience for fleet operators managing thousands of vehicles.</p>
+                <div class="technologies">
+                    <span>React</span> <span>TypeScript</span> <span>Python</span> <span>PostgreSQL</span> <span>Docker</span>
                 </div>
             </div>
 
-            <div class="skills-category">
-                <h3 class="skills-label">Technologies</h3>
-                <div class="skills-tags">
-                    <span class="skill-tag">AWS DynamoDB</span>
-                    <span class="skill-tag">AWS Lambda</span>
-                    <span class="skill-tag">AWS EKS</span>
-                    <span class="skill-tag">AWS MSK</span>
-                    <span class="skill-tag">AWS RDS</span>
-                    <span class="skill-tag">AWS Aurora</span>
-                    <span class="skill-tag">Kafka</span>
-                    <span class="skill-tag">PostgreSQL</span>
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">MongoDB</span>
-                    <span class="skill-tag">Firebase</span>
-                    <span class="skill-tag">Firestore</span>
-                    <span class="skill-tag">ML Kit</span>
+            <div class="job">
+                <div class="job-header">
+                    <h3>Coursera</h3>
+                    <span class="date">March 2021 - June 2021</span>
+                    <span class="location">Mountain View, CA</span>
+                </div>
+                <h4>Software Engineering Intern</h4>
+                <p>Built machine learning recommendation systems to personalize course suggestions. Developed A/B testing frameworks and analytics dashboards that drove data-driven product decisions.</p>
+                <div class="technologies">
+                    <span>Python</span> <span>React</span> <span>ML Kit</span> <span>PostgreSQL</span> <span>Spark</span>
                 </div>
             </div>
 
-            <div class="skills-category">
-                <h3 class="skills-label">Frameworks</h3>
-                <div class="skills-tags">
-                    <span class="skill-tag">Spring Boot</span>
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">Angular</span>
-                    <span class="skill-tag">Angular.js</span>
-                    <span class="skill-tag">Node.js</span>
-                    <span class="skill-tag">Ember.js</span>
-                    <span class="skill-tag">Ember Data</span>
-                    <span class="skill-tag">GraphQL</span>
-                    <span class="skill-tag">gRPC</span>
-                    <span class="skill-tag">Apache Airflow</span>
-                    <span class="skill-tag">Chart.js</span>
-                    <span class="skill-tag">JavaFX</span>
+            <div class="job">
+                <div class="job-header">
+                    <h3>Roche</h3>
+                    <span class="date">June 2019 - September 2019</span>
+                    <span class="location">South San Francisco, CA</span>
+                </div>
+                <h4>Software Engineering Intern</h4>
+                <p>Developed bioinformatics tools for genomic data analysis. Created automated pipelines for processing large-scale sequencing data and built visualization tools for research scientists.</p>
+                <div class="technologies">
+                    <span>Python</span> <span>Java</span> <span>SQL</span> <span>Docker</span> <span>Jenkins</span>
                 </div>
             </div>
 
-            <div class="skills-category">
-                <h3 class="skills-label">Tools</h3>
-                <div class="skills-tags">
-                    <span class="skill-tag">Terraform</span>
-                    <span class="skill-tag">Retool</span>
-                    <span class="skill-tag">Redis</span>
-                    <span class="skill-tag">Elasticsearch</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">GitHub Actions</span>
-                    <span class="skill-tag">MS TFS</span>
-                    <span class="skill-tag">Handlebars</span>
+            <div class="job">
+                <div class="job-header">
+                    <h3>C2 Group</h3>
+                    <span class="date">June 2018 - September 2018</span>
+                    <span class="location">San Diego, CA</span>
+                </div>
+                <h4>Software Engineering Intern</h4>
+                <p>Built customer relationship management systems and automated business workflows. Developed web applications using modern frameworks and integrated third-party APIs for enhanced functionality.</p>
+                <div class="technologies">
+                    <span>JavaScript</span> <span>Angular</span> <span>Node.js</span> <span>MySQL</span> <span>AWS</span>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3>UCSD Medical Center</h3>
+                    <span class="date">January 2018 - June 2018</span>
+                    <span class="location">San Diego, CA</span>
+                </div>
+                <h4>Software Engineering Intern</h4>
+                <p>Developed healthcare management systems and patient data visualization tools. Built secure web applications handling sensitive medical data with strict compliance requirements.</p>
+                <div class="technologies">
+                    <span>Java</span> <span>Spring Boot</span> <span>JavaScript</span> <span>PostgreSQL</span> <span>Docker</span>
                 </div>
             </div>
         </section>
+
+        <section class="entrepreneurship">
+            <h2>Entrepreneurship</h2>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3>Solemate</h3>
+                    <span class="date">August 2018 - August 2019</span>
+                    <span class="location">San Diego, CA</span>
+                </div>
+                <h4>Co-Founder & Lead Developer</h4>
+                <p>Co-founded and developed a social fitness mobile app that connected users for workout partnerships. Achieved 1.8K daily active users with features including real-time messaging, location-based matching, and workout tracking. Led a team of 4 developers and managed the complete product lifecycle from conception to deployment.</p>
+                <div class="technologies">
+                    <span>Swift</span> <span>Objective C</span> <span>Firebase</span> <span>Firestore</span> <span>Node.js</span> <span>React</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="education">
+            <h2>Education</h2>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3>Northwestern University</h3>
+                    <span class="date">September 2020 - June 2021</span>
+                    <span class="location">Evanston, IL</span>
+                </div>
+                <h4>Master of Science in Computer Engineering</h4>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3>University of California, San Diego</h3>
+                    <span class="date">September 2016 - June 2020</span>
+                    <span class="location">La Jolla, CA</span>
+                </div>
+                <h4>Bachelor of Science in Computer Engineering</h4>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="mailto:yingjianpei2022@u.northwestern.edu">email</a>
+                <a href="patrick_resume.pdf" target="_blank">resume</a>
+                <a href="https://linkedin.com/in/patrickpei11" target="_blank">linkedin</a>
+                <a href="https://github.com/peiyj" target="_blank">github</a>
+            </div>
+            <p>Patrick Pei 2024</p>
+        </footer>
     </div>
-
-    <!-- Floating background animations -->
-    <div class="floating-shapes">
-        <div class="floating-circle floating-circle-1"></div>
-        <div class="floating-circle floating-circle-2"></div>
-        <div class="floating-circle floating-circle-3"></div>
-        <div class="floating-triangle floating-triangle-1"></div>
-        <div class="floating-triangle floating-triangle-2"></div>
-        <div class="floating-square floating-square-1"></div>
-    </div>
-
-    <script>
-        function toggleDarkMode() {
-            const body = document.body;
-            const icon = document.getElementById('mode-icon');
-            
-            body.classList.toggle('dark-mode');
-            
-            if (body.classList.contains('dark-mode')) {
-                icon.className = 'fas fa-sun';
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                icon.className = 'fas fa-moon';
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        }
-
-        // Load saved theme preference
-        document.addEventListener('DOMContentLoaded', function() {
-            const darkMode = localStorage.getItem('darkMode');
-            const icon = document.getElementById('mode-icon');
-            
-            if (darkMode === 'enabled') {
-                document.body.classList.add('dark-mode');
-                icon.className = 'fas fa-sun';
-            }
-        });
-    </script>
 </body>
 </html> 
