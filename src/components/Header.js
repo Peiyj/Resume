@@ -28,7 +28,7 @@ const Header = ({ darkMode, toggleTheme }) => {
         </div>
       </div>
       <div className="contact">
-        <h3>📧 Drop me an email <a href="mailto:yingjianpei2022@u.northwestern.edu">yingjianpei2022@u.northwestern.edu</a></h3>
+        <h3>📧 Drop me an <a href="mailto:yingjianpei2022@u.northwestern.edu">email</a>!</h3>
       </div>
     </header>
   );
