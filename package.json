@@ -35,5 +35,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "overrides": {
+    "@testing-library/dom": "^9.0.0",
+    "jest-environment-jsdom": "^27.0.0"
   }
 } 
