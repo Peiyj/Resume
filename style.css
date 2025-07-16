@@ -270,6 +270,13 @@ body {
     font-weight: 600;
 }
 
+.location {
+    font-size: 0.95rem;
+    color: #718096;
+    font-style: italic;
+    margin-top: 4px;
+}
+
 .date {
     background: linear-gradient(135deg, #ff6b6b, #f093fb);
     color: white;
