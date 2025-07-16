@@ -6,11 +6,17 @@
     <title>Patrick Pei - Software Engineer</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <header class="header">
-            <h1>Hey there!</h1>
+            <div class="header-top">
+                <h1>Hey there!</h1>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+            </div>
             <div class="intro">
                 <h2>Me!</h2>
                 <p>I'm Patrick Pei, a senior software engineer with a passion for building scalable distributed systems & creating impactful solutions</p>
@@ -234,6 +240,7 @@
                     <span class="location">Evanston, IL</span>
                 </div>
                 <h4>Master of Science in Computer Engineering</h4>
+                <p class="gpa">GPA: 4.0/4.0</p>
             </div>
 
             <div class="job">
@@ -243,6 +250,7 @@
                     <span class="location">La Jolla, CA</span>
                 </div>
                 <h4>Bachelor of Science in Computer Engineering</h4>
+                <p class="gpa">GPA: 3.7/4.0</p>
             </div>
         </section>
 
@@ -256,5 +264,33 @@
             <p>Patrick Pei 2024</p>
         </footer>
     </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById('theme-icon');
+            
+            body.classList.toggle('dark-theme');
+            
+            if (body.classList.contains('dark-theme')) {
+                icon.className = 'fas fa-sun';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.className = 'fas fa-moon';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme preference
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const icon = document.getElementById('theme-icon');
+            
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                icon.className = 'fas fa-sun';
+            }
+        });
+    </script>
 </body>
 </html> 
