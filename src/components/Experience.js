@@ -5,42 +5,42 @@ const Experience = () => {
     {
       company: "Coursera",
       title: "Senior Software Engineer",
-      date: "September 2022 - Present",
+      date: "March 2024 - Present",
       location: "Mountain View, CA",
-      description: "Led development of scalable microservices serving millions of learners worldwide. Architected and implemented critical infrastructure improvements that reduced system latency by 40% and increased overall platform reliability. Spearheaded migration of legacy monolithic services to microservices architecture, resulting in 60% faster deployment cycles and improved system maintainability. Mentored junior engineers and established coding standards that reduced bug reports by 35%. Designed and implemented real-time analytics pipelines processing 500M+ events daily, enabling data-driven product decisions that increased course completion rates by 15%.",
-      technologies: ["Python", "Java", "React", "PostgreSQL", "Redis", "Kafka", "AWS", "Docker", "Kubernetes"]
+      description: "Led a P0 project with 4 engineers, designing and implementing an Allowlist Management Platform for managing near real-time data updating of courses and specializations at the contract-level, saving customer time from 2 weeks to under 10 seconds. Developed a RPC microservice with Java and gRPC supporting contract-level allowlist management. Implemented a conflict detection job using Apache Airflow that automatically resolves concurrent updates by the same user based on latest timestamp. Launched an internal contract-scope allowlist management software using Retool, saving engineering time from 95 minutes to under 5 seconds. Led a team of 3 engineers to design and develop a Badge Management Platform - a stream-processing platform for reliable real-time badge management service providing badge issuance workflow for learners across all organizations, leading to >$10M in contract ACVs.",
+      technologies: ["Java", "gRPC", "AWS DynamoDB", "AWS Lambda", "Apache Airflow", "Terraform", "Retool", "AWS EKS", "AWS MSK", "Kafka", "PostgreSQL", "GraphQL"]
     },
     {
       company: "Coursera",
       title: "Software Engineer II", 
-      date: "March 2022 - September 2022",
+      date: "March 2023 - March 2024",
       location: "Mountain View, CA",
-      description: "Developed and maintained core platform features used by millions of learners globally. Implemented advanced search capabilities using Elasticsearch that improved search accuracy by 45% and reduced query response time by 30%. Built machine learning recommendation systems that increased user engagement by 25% and course discovery by 40%. Led cross-functional initiatives to optimize database performance, reducing query execution time by 50% and improving overall platform responsiveness. Collaborated with product teams to deliver features that contributed to a 20% increase in monthly active users.",
-      technologies: ["Python", "JavaScript", "React", "Elasticsearch", "Spark", "PostgreSQL", "Docker"]
+      description: "Led a team of 3 engineers to design and develop a Clips Management Platform - a large scale, fault-tolerant, distributed system for clips metadata management service allowing creating, reading, updating, deleting clips metadata across the platform. Achieved scalability by enabling parallel processing on concurrent, non-conflicting batch clip metadata updates and distributing workload to multiple threads, reducing average clips metadata update time by 80%. Implemented distributed Redis Cache to reduce P95 and P99 latency of read operations by 80% and 92% respectively. Enforced data integrity, consistency and isolation for all clips metadata CRUD operations by implementing application level transactions, providing well-defined transaction boundaries for downstream curriculum updating services.",
+      technologies: ["Java", "Scala", "Spring Boot", "GraphQL", "Redis", "AWS Aurora", "MySQL", "Distributed Systems"]
     },
     {
       company: "Coursera",
       title: "Software Engineer I",
-      date: "October 2021 - March 2022",
+      date: "January 2022 - March 2023",
       location: "Mountain View, CA", 
-      description: "Built and optimized data pipelines processing over 100GB of learning analytics data daily, enabling real-time insights for 100M+ learners. Developed automated data validation systems that reduced data quality issues by 70% and improved reporting accuracy. Contributed to frontend development using React, implementing responsive UI components that enhanced user experience across mobile and desktop platforms. Established comprehensive monitoring and alerting systems that reduced system downtime by 80% and improved incident response time from hours to minutes.",
-      technologies: ["Python", "Airflow", "Hadoop", "PostgreSQL", "React", "Jenkins"]
+      description: "Led the Contract and User service migrations from Scala to Java through the Java Migration Platform, phasing out 12 legacy APIs and deprecating ~5K lines of code. Developed a gRPC microservice with 12 APIs to fetch and update contract utilization and learning data, handling ~3K QPS with 98% test coverage. Developed a gRPC microservice with 7 APIs to fetch and update learner profiles, handling ~200 QPS with 95% test coverage. Implemented the Java migration library with automated double read/write functionality, used in 15 migrations among 4 internal teams.",
+      technologies: ["Java", "Scala", "gRPC", "GraphQL", "JavaScript", "AWS RDS", "MySQL"]
     },
     {
       company: "Samsara",
       title: "Software Engineering Intern",
-      date: "June 2021 - September 2021",
+      date: "June 2021 - October 2021",
       location: "San Francisco, CA",
-      description: "Developed real-time fleet management features for IoT devices serving 25,000+ vehicles across North America. Built responsive web interfaces using React and TypeScript that improved fleet operator efficiency by 30% and reduced manual tracking overhead. Implemented advanced data visualization tools and interactive dashboards that provided actionable insights for fleet operators, resulting in 15% reduction in fuel costs and 20% improvement in route optimization. Collaborated with hardware teams to integrate sensor data streams, enabling predictive maintenance features that reduced vehicle downtime by 25%.",
-      technologies: ["React", "TypeScript", "Python", "PostgreSQL", "Docker"]
+      description: "Optimized the Config Pusher System (CPS) by developing patterns for batching requests, leveraging the fan-in pattern from Go routines. Designed a batch manager to consolidate requests using in-memory queue, reducing CPS service P95 latency by 90%. Built scalable microservices architecture using GoLang and integrated with MongoDB and PostgreSQL databases for high-performance data processing.",
+      technologies: ["GoLang", "MongoDB", "React", "AWS", "PostgreSQL", "Docker"]
     },
     {
       company: "Coursera", 
       title: "Software Engineering Intern",
-      date: "March 2021 - June 2021",
+      date: "January 2021 - March 2021",
       location: "Mountain View, CA",
-      description: "Built machine learning recommendation systems to personalize course suggestions for 80M+ learners, increasing course enrollment by 18% and improving learner satisfaction scores. Developed comprehensive A/B testing frameworks that enabled data-driven product decisions and reduced feature deployment risks. Created interactive analytics dashboards used by product managers and executives to track key metrics, leading to strategic decisions that improved learner retention by 12%. Optimized recommendation algorithms using collaborative filtering and content-based approaches, resulting in 35% better course matching accuracy.",
-      technologies: ["Python", "React", "ML Kit", "PostgreSQL", "Spark"]
+      description: "Supported the Roster Service Migration from Scala to Java, phasing out 6 legacy APIs and deprecating ~1.1K lines of code. Implemented 3 gRPC APIs for obtaining and updating learner rosters, handling ~200 QPS with 95% test coverage. Contributed to the migration platform that enabled seamless transition between legacy and modern service architectures.",
+      technologies: ["Java", "Scala", "gRPC", "JavaScript", "TypeScript", "MongoDB", "HTML", "CSS"]
     },
     {
       company: "Roche",
