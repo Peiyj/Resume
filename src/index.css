@@ -136,6 +136,45 @@ body {
     max-width: 600px;
 }
 
+/* Photo and text layout */
+.intro-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.intro-photo {
+    flex-shrink: 0;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.intro-text {
+    flex: 1;
+}
+
+.intro-text h2 {
+    margin-bottom: 15px;
+}
+
+.intro-text p {
+    margin-bottom: 0;
+}
+
 .contact h3 {
     font-size: 1.25rem;
     font-weight: 500;
@@ -522,10 +561,22 @@ h2:hover::after {
         font-size: 1.5rem;
     }
     
-    .intro p {
+        .intro p {
         font-size: 1rem;
     }
     
+    /* Mobile photo layout */
+    .intro-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
     h2 {
         font-size: 1.75rem;
         margin-bottom: 30px;

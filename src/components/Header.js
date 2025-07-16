@@ -1,4 +1,5 @@
 import React from 'react';
+import profilePhoto from '../assets/patrickpei.jpeg';
 
 const Header = ({ darkMode, toggleTheme }) => {
   return (
@@ -16,8 +17,15 @@ const Header = ({ darkMode, toggleTheme }) => {
         </button>
       </div>
       <div className="intro">
-        <h2>🚀 About Me!</h2>
-        <p>I'm <strong>Patrick Pei</strong>, a <strong>senior software engineer</strong> with a passion for building <strong>distributed systems</strong> & creating impactful solutions 💡</p>
+        <div className="intro-content">
+          <div className="intro-photo">
+            <img src={profilePhoto} alt="Patrick Pei" className="profile-image" />
+          </div>
+          <div className="intro-text">
+            <h2>🚀 About Me!</h2>
+            <p>I'm <strong>Patrick Pei</strong>, a <strong>senior software engineer</strong> with a passion for building <strong>distributed systems</strong> & creating impactful solutions 💡</p>
+          </div>
+        </div>
       </div>
       <div className="contact">
         <h3>📧 Drop me a line <a href="mailto:yingjianpei2022@u.northwestern.edu">yingjianpei2022@u.northwestern.edu!</a></h3>
