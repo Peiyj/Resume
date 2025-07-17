@@ -87,16 +87,18 @@ docker run --rm patrick-resume
 
 ## 🚀 Deployment Options
 
-### Option 1: Cloudflare Pages (Recommended)
+### Option 1: Cloudflare Pages (Standard React - Recommended)
 - **Framework preset**: Create React App
 - **Build command**: `npm run build`
-- **Build output**: `build`
+- **Build output directory**: `build`
 - **Root directory**: `/Resume`
+- **Node.js version**: 18.x
 
-### Option 2: Cloudflare Workers (Docker)
-- **Build command**: `./cloudflare-docker.sh`
+### Option 2: Cloudflare Workers (Docker-based)
+- **Build command**: `./cloudflare-docker.sh` 
 - **Deploy command**: `npm run docker:deploy`
 - **Build output**: `build`
+- **Note**: Only for Workers, NOT for Pages
 
 ### Option 3: GitHub Pages (Current)
 Automated deployment via GitHub Actions using Docker:
