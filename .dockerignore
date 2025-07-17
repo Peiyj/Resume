@@ -26,10 +26,9 @@ coverage
 README.md
 README_website.md
 
-# Docker files
-Dockerfile*
+# Docker files (except Cloudflare-specific ones)
+Dockerfile
 docker-compose*
-.dockerignore
 
 # OS generated files
 Thumbs.db
@@ -40,4 +39,12 @@ Desktop.ini
 .idea
 *.swp
 *.swo
-*~ 
+*~
+
+# Bun and other package managers
+bun.lockb
+yarn.lock
+
+# Cloudflare specific exclusions
+.wrangler
+wrangler.toml 
