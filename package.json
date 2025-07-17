@@ -21,6 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build:cloudflare": "npm cache clean --force && npm install --legacy-peer-deps && npm run build",
+    "deploy:cloudflare": "npm run build && echo 'Build completed - manual deployment needed'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
