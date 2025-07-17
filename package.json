@@ -20,7 +20,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "./cloudflare-docker.sh",
+    "deploy": "./cloudflare-build.sh && wrangler deploy",
+    "workers:dev": "wrangler dev",
+    "workers:deploy": "wrangler deploy",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -45,5 +47,9 @@
   "overrides": {
     "@testing-library/dom": "^9.0.0",
     "jest-environment-jsdom": "^27.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/kv-asset-handler": "^0.3.4",
+    "wrangler": "^3.14.0"
   }
-} 
+}

@@ -1,0 +1,14 @@
+name = "patrick-resume"
+main = "worker.js"
+compatibility_date = "2024-07-17"
+
+[site]
+bucket = "./build"
+entry-point = "worker.js"
+
+[vars]
+ENVIRONMENT = "production"
+
+[[routes]]
+pattern = "ppei.dev/*"
+zone_name = "ppei.dev" 
