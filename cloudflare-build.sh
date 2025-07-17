@@ -10,9 +10,9 @@ rm -rf build/
 echo "📦 Installing dependencies..."
 npm ci --legacy-peer-deps --no-audit --no-fund
 
-# Install Wrangler CLI for deployment
-echo "🔧 Installing Wrangler CLI..."
-npm install -g wrangler
+# Install Wrangler CLI for deployment (Node 18 compatible version)
+echo "🔧 Installing Wrangler CLI (Node 18 compatible)..."
+npm install -g wrangler@3.78.0
 
 # Build React application
 echo "⚛️ Building React application..."
