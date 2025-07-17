@@ -146,6 +146,7 @@ docker run -p 80:80 patrick-resume
 ### Version 2.1 (January 2025) - Latest
 - 📄 **PDF Management**: Moved resume to `public/patrick_resume.pdf` for proper web access
 - ☁️ **Cloudflare Pages**: Added `_headers` and `_redirects` for deployment optimization
+- 🐳 **Docker Containerization**: Multi-stage builds with nginx, docker-compose support
 - 📝 **LaTeX Source**: Included `patrick_resume.tex` in public folder for transparency
 - 🎯 **Senior SWE Focus**: Enhanced descriptions with scale metrics (10M+ users, $10M+ revenue)
 - 📐 **One Page Resume**: Optimized spacing and content for 1-page professional format

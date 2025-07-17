@@ -53,7 +53,7 @@ cd resume
 
 2. Install dependencies:
 ```bash
-npm install
+npm install --legacy-peer-deps
 ```
 
 3. Start development server:
@@ -62,6 +62,33 @@ npm start
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+### 🐳 Docker Development
+
+For a consistent development environment:
+
+1. **Quick Docker setup:**
+```bash
+./docker-build.sh
+```
+
+2. **Using docker-compose:**
+```bash
+# Production build
+docker-compose up resume-app
+
+# Development with hot reload
+docker-compose --profile dev up resume-dev
+```
+
+3. **Manual Docker commands:**
+```bash
+# Build image
+docker build -t patrick-resume .
+
+# Run container
+docker run -p 3000:80 patrick-resume
+```
 
 ## Deployment Options
 
