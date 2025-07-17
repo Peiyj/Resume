@@ -1,26 +1,63 @@
 # Cloudflare Pages Setup Instructions
 
-## 🛠️ Build Configuration
+## 🚨 **CRITICAL: Cloudflare Pages vs Workers**
+
+**Your project is currently configured for Cloudflare Workers** (hence the `wrangler deploy` error). You need a **Cloudflare Pages** project instead.
+
+### ❌ Current Problem
+- Deploy command shows: `npx wrangler deploy` 
+- This is for Cloudflare Workers (requires Node 20+)
+- Your React app needs Cloudflare Pages (static hosting)
+
+## 🛠️ **SOLUTION: Fix Dashboard Configuration**
+
+### Option A: Fix Current Project Settings
+
+1. **Go to Cloudflare Pages Dashboard**
+2. **Select your `resume` project**
+3. **Click "Settings" tab**
+4. **Scroll to "Builds & deployments"**
+5. **Click "Configure" next to "Production deployments"**
+6. **CLEAR the Deploy command field** (leave empty!)
+7. **Update these settings:**
+   - Framework preset: `None`
+   - Build command: `npm run build:cloudflare`
+   - Build output directory: `build`
+   - Root directory: `/Resume`
+   - **Deploy command: [LEAVE EMPTY]**
+8. **Click "Save"**
+
+### Option B: Create New Cloudflare Pages Project
+
+If Option A doesn't work:
+
+1. **Delete current project** (if it's Workers-based)
+2. **Create new Cloudflare Pages project**
+3. **Connect to GitHub repository**
+4. **Use these settings:**
+   - Framework preset: `Create React App`
+   - Build command: `npm run build`
+   - Build output directory: `build`
+   - Root directory: `/Resume`
+
+## 🔧 **Build Configuration**
 
 ### 1. Build Settings (Dashboard)
-Configure these settings in your Cloudflare Pages project:
-
-**Framework preset:** None (Custom)
+**Framework preset:** Create React App (or None)
 **Build command:** `npm run build:cloudflare`
 **Build output directory:** `build`
-**Root directory:** `/Resume` (if using monorepo structure)
+**Root directory:** `/Resume`
+**Deploy command:** [LEAVE EMPTY - this is key!]
 
-⚠️ **CRITICAL**: Make sure to update the build command in the Cloudflare Pages dashboard to use `npm run build:cloudflare` instead of the default npm ci command.
+⚠️ **CRITICAL**: The deploy command field must be empty for Pages!
 
-### 2. Environment Variables
+### 2. Environment Variables (Optional)
 Set these in Cloudflare Pages dashboard → Settings → Environment Variables:
 
 ```
 NODE_VERSION=18
 NPM_VERSION=10
 NODE_OPTIONS=--max-old-space-size=4096
-GENERATE_SOURCEMAP=false
-INLINE_RUNTIME_CHUNK=false
 ```
 
 ### 3. Alternative Build Commands
@@ -44,11 +81,11 @@ rm -rf node_modules package-lock.json && npm install --legacy-peer-deps && npm r
 ## 🔧 Troubleshooting
 
 ### TypeScript Version Conflicts
-If you see `Invalid: lock file's typescript@5.8.3 does not satisfy typescript@4.9.5`:
+✅ **RESOLVED**: Dependencies now install successfully!
 
-1. **Use build command:** `npm run build:cloudflare` (handles conflicts automatically)
-2. **Or use alternative:** `npm install --legacy-peer-deps && npm run build`
-3. **Note:** package-lock.json has been removed to force regeneration
+### Wrangler Deploy Error
+❌ **Current Issue**: Your project is configured for Workers, not Pages
+✅ **Solution**: Clear the deploy command in dashboard settings
 
 ### Memory Issues
 If build fails with memory errors:
@@ -60,61 +97,66 @@ If builds are inconsistent:
 
 ## 📋 Checklist
 
-- [ ] Framework preset: None/Custom  
+- [ ] Project type: Cloudflare **Pages** (not Workers)
+- [ ] Framework preset: Create React App or None/Custom  
 - [ ] Build command: `npm run build:cloudflare`
 - [ ] Build output: `build`
 - [ ] Root directory: `/Resume`
+- [ ] **Deploy command: [EMPTY]** ← This is critical!
 - [ ] Node version: 18
-- [ ] Environment variables set
+- [ ] Environment variables set (optional)
 - [ ] `.nvmrc` file present (contains `18`)
 - [ ] `package.json` has engines field and build:cloudflare script
-- [ ] package-lock.json removed from repository
+- [ ] package-lock.json present and working
 
 ## 🚀 Expected Build Process
 
-1. **Environment Setup** (Node 18, NPM 10)
-2. **Cache Clean** (`npm cache clean --force`)
-3. **Install Dependencies** (`npm install --legacy-peer-deps`)
-4. **Build React App** (`npm run build`)
-5. **Deploy** (automatic)
+1. **Environment Setup** (Node 18, NPM 10) ✅
+2. **Install Dependencies** (`npm install --legacy-peer-deps`) ✅  
+3. **Build React App** (`npm run build`) 
+4. **Deploy** (automatic - no wrangler needed)
 
-## 🎯 **Step-by-Step Cloudflare Dashboard Setup**
+## 🎯 **Step-by-Step Dashboard Fix**
 
-1. **Go to Cloudflare Pages Dashboard**
-2. **Select your `resume` project**
-3. **Click "Settings" tab**
-4. **Scroll to "Builds & deployments"**
-5. **Click "Configure" next to "Production deployments"**
-6. **Update the following fields:**
-   - Framework preset: `None`
-   - Build command: `npm run build:cloudflare`
-   - Build output directory: `build`
-   - Root directory: `/Resume`
-7. **Click "Save"**
-8. **Go to "Environment variables"**
-9. **Add the environment variables listed above**
-10. **Trigger a new deployment**
+1. **Go to your Cloudflare dashboard**
+2. **Find your resume project**
+3. **Check if it says "Workers & Pages" or just "Pages"**
+4. **If it's Workers**: Delete and recreate as Pages project
+5. **If it's Pages**: Clear the deploy command field
+6. **Set build command to**: `npm run build:cloudflare`
+7. **Ensure deploy command is empty**
+8. **Save and redeploy**
 
 ## 📁 Required Files
 
-- ✅ `package.json` (with engines field)
-- ✅ `package-lock.json` 
+- ✅ `package.json` (with packageManager and build:cloudflare script)
+- ✅ `package-lock.json` (working correctly now!)
 - ✅ `.nvmrc` (Node 18)
-- ✅ `package.json` (with build:cloudflare script)
+- ✅ `.npmrc` (with legacy-peer-deps=true)
 - ✅ `public/_headers` (security headers)
 - ✅ `public/_redirects` (SPA routing)
 
-## 🔗 Alternative: Use GitHub Actions
+## 🔗 Alternative: Use GitHub Pages
 
-If Cloudflare Pages continues to fail, consider using GitHub Actions deployment:
-1. Build in GitHub Actions with Docker
-2. Deploy to Cloudflare Pages via wrangler CLI
-3. Or deploy to GitHub Pages (current working setup)
+Your GitHub Actions deployment should work now! If Cloudflare continues to be problematic, your site is also available at:
+- https://peiyj.github.io/resume
 
 ## 📞 Support
 
-If issues persist:
-1. Check Cloudflare Pages build logs
-2. Verify all environment variables are set
-3. Test build script locally: `npm run build:cloudflare`
-4. Contact Cloudflare support with specific error messages 
+The dependency issues are now **fully resolved**! If you're still having issues:
+
+1. ✅ Dependencies: Fixed!
+2. ❌ Deploy method: Check dashboard settings
+3. Test build script locally: `npm run build:cloudflare` ✅
+4. Verify project type: Should be "Pages" not "Workers"
+
+## 🎉 Success Indicators
+
+You'll know it's working when you see:
+```
+✅ Installing project dependencies: npm clean-install
+✅ added 1503 packages in 25s
+✅ Building application
+✅ Build completed
+✅ Deploying to Cloudflare's global network (no wrangler!)
+``` 
