@@ -36,8 +36,8 @@ jobs:
         
       - name: Build React app with Docker
         run: |
-          # Build the Docker image
-          docker build -t resume-app .
+          # Build the Docker image with legacy peer deps support
+          docker build --build-arg LEGACY_PEER_DEPS=true -t resume-app .
           
           # Create a container and extract the built files
           docker create --name temp-container resume-app

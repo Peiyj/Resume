@@ -4,12 +4,19 @@ FROM node:18-alpine AS build
 # Set working directory
 WORKDIR /app
 
+# Build argument for legacy peer deps
+ARG LEGACY_PEER_DEPS=false
+
 # Copy package files first (for better layer caching)
 COPY package.json package-lock.json ./
 
-# Clean install dependencies with version resolution
+# Install dependencies with conditional legacy peer deps
 RUN npm cache clean --force && \
-    npm ci --legacy-peer-deps --no-audit --no-fund
+    if [ "$LEGACY_PEER_DEPS" = "true" ]; then \
+        npm ci --legacy-peer-deps --no-audit --no-fund; \
+    else \
+        npm ci --no-audit --no-fund; \
+    fi
 
 # Copy source code
 COPY . .
