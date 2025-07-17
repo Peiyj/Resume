@@ -20,9 +20,6 @@ RUN npm run build
 # Production stage - prepare for Cloudflare deployment
 FROM alpine:latest AS deploy
 
-# Install curl for health checks and deployment tools
-RUN apk add --no-cache curl
-
 # Copy built files from builder stage
 COPY --from=builder /app/build /app/build
 
