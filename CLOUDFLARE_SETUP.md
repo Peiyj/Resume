@@ -116,13 +116,13 @@ If automatic deployment fails:
 
 ### 2. Verify Build Output
 ```bash
-docker run --rm patrick-resume:latest
+docker run --rm resume:latest
 # Should output: "Cloudflare Workers Docker build completed successfully"
 ```
 
 ### 3. Check Build Files
 ```bash
-docker run --rm patrick-resume:latest ls -la /app/build/
+docker run --rm resume:latest ls -la /app/build/
 # Should show: index.html, static/, etc.
 ```
 

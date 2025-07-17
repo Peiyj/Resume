@@ -77,7 +77,7 @@ npm run deploy
 
 ### **wrangler.toml**
 ```toml
-name = "patrick-resume"
+name = "resume"
 main = "worker.js"
 compatibility_date = "2024-07-17"
 
@@ -194,7 +194,7 @@ wrangler dev
 ## 📞 **Expected Results**
 
 After successful deployment:
-- ✅ `https://patrick-resume.your-subdomain.workers.dev` - Workers URL
+- ✅ `https://resume.your-subdomain.workers.dev` - Workers URL
 - ✅ `https://ppei.dev` - Custom domain (if configured)
 - ✅ Global edge deployment in ~30 seconds
 - ✅ Sub-10ms response times worldwide

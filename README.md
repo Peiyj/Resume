@@ -27,7 +27,7 @@ A modern, professional resume website built with React and deployed via **Cloudf
 ## 🏗️ Project Structure
 
 ```
-patrick-resume-react/
+resume-react/
 ├── public/
 │   ├── index.html              # HTML template
 │   ├── patrick_resume.pdf      # Latest PDF version (100KB, 1 page)
@@ -79,8 +79,8 @@ For consistent development environment:
 ./cloudflare-docker.sh
 
 # Manual Docker commands
-docker build -f Dockerfile.cloudflare -t patrick-resume .
-docker run --rm patrick-resume
+docker build -f Dockerfile.cloudflare -t resume .
+docker run --rm resume
 ```
 
 ## 🚀 Cloudflare Workers Deployment
