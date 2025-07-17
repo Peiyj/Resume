@@ -28,17 +28,28 @@ A modern, professional resume website built with React featuring enhanced visual
 
 ### React Application Structure
 ```
-src/
-├── components/
-│   ├── Header.js         # 👋 Greeting, contact info, theme toggle
-│   ├── Background.js     # Animated background elements
-│   ├── Experience.js     # 💼 Detailed professional history
-│   ├── Skills.js         # 🛠️ Technical skills by category
-│   ├── Entrepreneurship.js # 🚀 Startup experience
-│   ├── Education.js      # 🎓 Academic background
-│   └── Footer.js         # 📧 Contact links with emojis
-├── App.js               # Main application with dark mode logic
-└── index.css            # Comprehensive styling with theme support
+patrick-resume-react/
+├── public/
+│   ├── index.html          # HTML template
+│   ├── patrick_resume.pdf  # 📄 Latest PDF resume (100KB, 1 page)
+│   ├── patrick_resume.tex  # 📝 LaTeX source for PDF generation
+│   ├── _headers            # ☁️ Cloudflare Pages optimization
+│   └── _redirects          # 🔀 SPA routing support
+├── src/
+│   ├── components/
+│   │   ├── Header.js       # 👋 Greeting, contact info, theme toggle
+│   │   ├── Background.js   # 🌟 Animated background elements
+│   │   ├── Experience.js   # 💼 Detailed professional history
+│   │   ├── Skills.js       # 🛠️ Technical skills by category
+│   │   ├── Entrepreneurship.js # 🚀 Startup experience
+│   │   ├── Education.js    # 🎓 Academic background
+│   │   └── Footer.js       # 📧 Contact links with emojis
+│   ├── App.js              # 🎯 Main application with dark mode logic
+│   ├── App.css             # 🎨 Component-specific styles
+│   └── index.css           # 🌈 Global styling with theme support
+├── build/                  # 📦 Production build output
+├── package.json            # 📋 Dependencies and scripts
+└── README_website.md       # 📚 Detailed technical documentation
 ```
 
 ## 🎯 Key Features
@@ -132,6 +143,14 @@ docker run -p 80:80 patrick-resume
 
 ## 🔄 Recent Changes
 
+### Version 2.1 (January 2025) - Latest
+- 📄 **PDF Management**: Moved resume to `public/patrick_resume.pdf` for proper web access
+- ☁️ **Cloudflare Pages**: Added `_headers` and `_redirects` for deployment optimization
+- 📝 **LaTeX Source**: Included `patrick_resume.tex` in public folder for transparency
+- 🎯 **Senior SWE Focus**: Enhanced descriptions with scale metrics (10M+ users, $10M+ revenue)
+- 📐 **One Page Resume**: Optimized spacing and content for 1-page professional format
+- 🔧 **Build Fixes**: Resolved Workers deployment issues with proper configuration
+
 ### Version 2.0 (January 2025)
 - ✨ Dark mode as default
 - 🎨 Comprehensive emoji integration
@@ -142,10 +161,13 @@ docker run -p 80:80 patrick-resume
 
 ### Deployment Status
 - ✅ React build optimized
-- ✅ GitHub Pages live
+- ✅ GitHub Pages live  
+- ✅ Cloudflare Pages ready
+- ✅ PDF properly linked (`/patrick_resume.pdf`)
 - ✅ Dark mode functional
 - ✅ Mobile responsive
 - ✅ Print optimized
+- ✅ LaTeX source included
 
 ## 📝 Future Enhancements
 - Interactive skill level indicators
