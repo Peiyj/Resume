@@ -1,5 +1,5 @@
 import React from 'react';
-import profilePhoto from '../assets/patrickpei.jpeg';
+import profilePhoto from '../assets/images/patrickpei.jpeg';
 
 const Header = ({ darkMode, toggleTheme }) => {
   return (
