@@ -14,4 +14,14 @@ zone_name = "ppei.dev"
 
 [[routes]]
 pattern = "www.ppei.dev/*"
-zone_name = "ppei.dev" 
+zone_name = "ppei.dev"
+
+# Preview environment for non-production deployments
+[env.preview]
+name = "resume-preview"
+vars = { ENVIRONMENT = "preview" }
+
+# Optional: Staging environment  
+[env.staging]
+name = "resume-staging"
+vars = { ENVIRONMENT = "staging" } 
