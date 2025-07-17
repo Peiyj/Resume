@@ -20,12 +20,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:cloudflare-pages": "npm ci --legacy-peer-deps && npm run build",
+    "deploy": "./cloudflare-docker.sh",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "docker:build": "docker build -f Dockerfile.cloudflare -t resume-cloudflare .",
-    "docker:test": "docker run --rm resume-cloudflare:latest",
-    "docker:deploy": "echo 'Docker build completed for Cloudflare Workers deployment'"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

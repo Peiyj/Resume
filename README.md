@@ -1,9 +1,9 @@
 # Patrick Pei - Resume Website 🚀
 
-A modern, professional resume website built with React featuring Docker containerization, dark mode by default, and comprehensive professional experience showcase.
+A modern, professional resume website built with React and deployed via **Cloudflare Workers** with Docker containerization.
 
 ## 🌐 Live Website
-**[https://ppei.dev](https://ppei.dev)** | **[https://peiyj.github.io/resume](https://peiyj.github.io/resume)**
+**[https://ppei.dev](https://ppei.dev)**
 
 ## 📋 Contact Information
 - **Email**: yingjianpei2022@u.northwestern.edu  
@@ -16,7 +16,7 @@ A modern, professional resume website built with React featuring Docker containe
 - 🌙 **Dark Mode by Default**: Professional dark theme with light mode option
 - 📱 **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
 - ⚡ **Fast Loading**: Optimized React build with code splitting
-- 🐳 **Docker Containerized**: Multi-stage builds for consistent deployment
+- 🐳 **Docker Containerized**: Multi-stage builds for Cloudflare Workers
 - 🎯 **ATS-Friendly**: SEO optimized and machine-readable
 - 🖨️ **Print-Ready**: Optimized CSS for printing
 - ♿ **Accessible**: WCAG compliant design with proper semantic HTML
@@ -30,8 +30,7 @@ patrick-resume-react/
 │   ├── index.html              # HTML template
 │   ├── patrick_resume.pdf      # Latest PDF version (100KB, 1 page)
 │   ├── patrick_resume.tex      # LaTeX source for PDF
-│   ├── _headers                # Cloudflare Pages headers
-│   └── _redirects              # SPA routing support
+│   └── manifest.json           # PWA manifest
 ├── src/
 │   ├── assets/
 │   │   ├── images/             # Profile photos, etc.
@@ -47,8 +46,8 @@ patrick-resume-react/
 │   ├── App.js                  # Main application
 │   ├── index.css               # Global styles
 │   └── index.js                # App entry point
-├── Dockerfile.cloudflare       # Docker build for Cloudflare
-├── cloudflare-docker.sh        # Docker build script
+├── Dockerfile.cloudflare       # Docker build for Cloudflare Workers
+├── cloudflare-docker.sh        # Build & deployment script
 ├── package.json                # Dependencies & scripts
 └── CLOUDFLARE_SETUP.md        # Deployment documentation
 ```
@@ -77,38 +76,26 @@ For consistent development environment:
 # Build and test Docker container
 ./cloudflare-docker.sh
 
-# Use docker-compose for development
-docker-compose --profile dev up resume-dev
-
 # Manual Docker commands
 docker build -f Dockerfile.cloudflare -t patrick-resume .
 docker run --rm patrick-resume
 ```
 
-## 🚀 Deployment Options
+## 🚀 Cloudflare Workers Deployment
 
-### Option 1: Cloudflare Pages (Standard React - Recommended)
-- **Framework preset**: Create React App
-- **Build command**: `npm run build`
-- **Build output directory**: `build`
-- **Root directory**: `/Resume`
-- **Node.js version**: 18.x
+### Quick Deploy
+```bash
+npm run deploy
+```
 
-### Option 2: Cloudflare Workers (Docker-based)
-- **Build command**: `./cloudflare-docker.sh` 
-- **Deploy command**: `npm run docker:deploy`
-- **Build output**: `build`
-- **Note**: Only for Workers, NOT for Pages
+### Manual Configuration
 
-### Option 3: GitHub Pages (Current)
-Automated deployment via GitHub Actions using Docker:
-- Builds React app with Docker
-- Extracts built files
-- Deploys to GitHub Pages
+**Cloudflare Workers Settings:**
+- **Build command**: `./cloudflare-docker.sh`
+- **Build output**: Docker container with built React app
+- **Framework**: Custom Docker build
 
-### Option 4: Other Platforms
-- **Netlify**: Auto-detects React, `npm run build`
-- **Vercel**: Zero-config React deployment
+See `CLOUDFLARE_SETUP.md` for detailed configuration steps.
 
 ## 🛠️ Technology Stack
 
@@ -118,11 +105,10 @@ Automated deployment via GitHub Actions using Docker:
 - **Local Storage**: Theme preference persistence
 - **Responsive Design**: Mobile-first approach
 
-### Development & Deployment
+### Deployment
 - **Docker**: Multi-stage containerized builds
+- **Cloudflare Workers**: Edge deployment
 - **npm**: Package management with legacy peer deps
-- **GitHub Actions**: CI/CD pipeline
-- **Cloudflare**: Edge deployment options
 
 ### Content Management
 - **LaTeX**: PDF resume generation
@@ -168,15 +154,11 @@ Automated deployment via GitHub Actions using Docker:
 # Development
 npm start                    # Start dev server
 npm run build               # Production build
+npm run deploy              # Build & deploy to Cloudflare Workers
 
-# Docker
-npm run docker:build       # Build Docker image
-npm run docker:test        # Test Docker container
-./cloudflare-docker.sh     # Full Docker build & test
-
-# Cloudflare-specific
-npm run build:cloudflare   # Build with dependency fixes
-npm run deploy:cloudflare  # Signal deployment ready
+# Testing
+npm test                    # Run React tests
+./cloudflare-docker.sh      # Test Docker build locally
 ```
 
 ## 🎨 Customization
@@ -202,20 +184,24 @@ Currently using Inter from Google Fonts. Update in `public/index.html`.
 
 - **React 18**: Latest React with concurrent features
 - **Code Splitting**: Optimized bundle sizes  
-- **Docker Optimized**: 14.5MB production image
-- **CDN Ready**: Cloudflare and GitHub Pages optimized
+- **Docker Optimized**: 9.22MB production image
+- **Edge Deployment**: Cloudflare Workers global distribution
 - **Fast Loading**: < 50KB gzipped bundle
 
 ## 🔄 Recent Updates
 
-### Version 2.1 (January 2025) - Latest
-- 🐳 **Docker Containerization**: Multi-stage builds with nginx, docker-compose support
-- 📄 **PDF Management**: Moved resume to `public/patrick_resume.pdf` for proper web access
-- ☁️ **Cloudflare Pages**: Added `_headers` and `_redirects` for deployment optimization
-- 📝 **LaTeX Source**: Included `patrick_resume.tex` in public folder for transparency
-- 🎯 **Senior SWE Focus**: Enhanced descriptions with scale metrics (10M+ users, $10M+ revenue)
-- 📐 **One Page Resume**: Optimized spacing and content for 1-page professional format
-- 🧹 **Project Cleanup**: Organized assets, consolidated documentation, removed unused files
+### Version 2.2 (January 2025) - Latest
+- 🧹 **Simplified Deployment**: Removed GitHub Pages, focus on Cloudflare Workers only
+- 🐳 **Streamlined Docker**: Single Dockerfile for Workers deployment
+- 📝 **Consolidated Scripts**: Simple `npm run deploy` command
+- 🔧 **Cleaner Architecture**: Removed multi-platform complexity
+
+### Version 2.1 (January 2025)
+- 🐳 **Docker Containerization**: Multi-stage builds with nginx
+- 📄 **PDF Management**: Moved resume to `public/patrick_resume.pdf`
+- 🎯 **Senior SWE Focus**: Enhanced descriptions with scale metrics
+- 📐 **One Page Resume**: Optimized spacing for 1-page format
+- 🧹 **Project Cleanup**: Organized assets, consolidated documentation
 
 ## 🆘 Troubleshooting
 
@@ -238,4 +224,4 @@ For issues or questions:
 
 ---
 
-**Built with ❤️ by Patrick Pei** | **Deployed with 🐳 Docker & ☁️ Cloudflare**
+**Built with ❤️ by Patrick Pei** | **Deployed with 🐳 Docker & ☁️ Cloudflare Workers**
