@@ -10,4 +10,8 @@ ENVIRONMENT = "production"
 
 [[routes]]
 pattern = "ppei.dev/*"
+zone_name = "ppei.dev"
+
+[[routes]]
+pattern = "www.ppei.dev/*"
 zone_name = "ppei.dev" 

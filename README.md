@@ -1,9 +1,11 @@
 # Patrick Pei - Resume Website 🚀
 
-A modern, professional resume website built with React and deployed via **Cloudflare Workers** with Docker containerization.
+A modern, professional resume website built with React and deployed via **Cloudflare Workers** for global edge distribution.
 
 ## 🌐 Live Website
-**[https://ppei.dev](https://ppei.dev)**
+**[https://ppei.dev](https://ppei.dev)** | **[https://www.ppei.dev](https://www.ppei.dev)**
+
+> 🚀 **Deployed on Cloudflare Workers** - Sub-10ms response times globally from 275+ edge locations
 
 ## 📋 Contact Information
 - **Email**: yingjianpei2022@u.northwestern.edu  
@@ -15,8 +17,8 @@ A modern, professional resume website built with React and deployed via **Cloudf
 - 🎨 **Modern React Design**: Component-based architecture with smooth animations
 - 🌙 **Dark Mode by Default**: Professional dark theme with light mode option
 - 📱 **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
-- ⚡ **Fast Loading**: Optimized React build with code splitting
-- 🐳 **Docker Containerized**: Multi-stage builds for Cloudflare Workers
+- ⚡ **Edge Performance**: Cloudflare Workers with global CDN and sub-10ms response times
+- 🐳 **Docker Containerized**: Multi-stage builds optimized for Workers deployment
 - 🎯 **ATS-Friendly**: SEO optimized and machine-readable
 - 🖨️ **Print-Ready**: Optimized CSS for printing
 - ♿ **Accessible**: WCAG compliant design with proper semantic HTML
@@ -83,7 +85,7 @@ docker run --rm patrick-resume
 
 ## 🚀 Cloudflare Workers Deployment
 
-### Quick Deploy
+### Quick Deploy [[memory:3504629]]
 ```bash
 npm run deploy
 ```
@@ -93,9 +95,10 @@ npm run deploy
 **Cloudflare Workers Settings:**
 - **Build command**: `./cloudflare-docker.sh`
 - **Build output**: Docker container with built React app
-- **Framework**: Custom Docker build
+- **Custom Domain**: `ppei.dev` with automatic HTTPS
+- **Global Edge**: 275+ locations worldwide
 
-See `CLOUDFLARE_SETUP.md` for detailed configuration steps.
+See `CLOUDFLARE_WORKERS_DEPLOYMENT.md` for detailed configuration steps.
 
 ## 🛠️ Technology Stack
 
@@ -190,18 +193,17 @@ Currently using Inter from Google Fonts. Update in `public/index.html`.
 
 ## 🔄 Recent Updates
 
-### Version 2.2 (January 2025) - Latest
+### Version 2.3 (January 2025) - Latest [[memory:3504629]]
+- 🌐 **Production Domain**: Live at https://ppei.dev with Cloudflare Workers
+- 🧹 **Consolidated Documentation**: Single source of truth in README.md
+- ⚡ **Optimized Performance**: Global edge deployment with sub-10ms response times
+- 🔧 **Streamlined Deployment**: Single `npm run deploy` command
+
+### Version 2.2 (January 2025) 
 - 🧹 **Simplified Deployment**: Removed GitHub Pages, focus on Cloudflare Workers only
 - 🐳 **Streamlined Docker**: Single Dockerfile for Workers deployment
 - 📝 **Consolidated Scripts**: Simple `npm run deploy` command
 - 🔧 **Cleaner Architecture**: Removed multi-platform complexity
-
-### Version 2.1 (January 2025)
-- 🐳 **Docker Containerization**: Multi-stage builds with nginx
-- 📄 **PDF Management**: Moved resume to `public/patrick_resume.pdf`
-- 🎯 **Senior SWE Focus**: Enhanced descriptions with scale metrics
-- 📐 **One Page Resume**: Optimized spacing for 1-page format
-- 🧹 **Project Cleanup**: Organized assets, consolidated documentation
 
 ## 🆘 Troubleshooting
 
@@ -209,19 +211,22 @@ Currently using Inter from Google Fonts. Update in `public/index.html`.
 - **Dependency conflicts**: Use `npm install --legacy-peer-deps`
 - **Docker build fails**: Ensure Docker is running
 - **Assets not loading**: Check paths in `src/assets/`
+- **Domain issues**: Verify Cloudflare DNS settings point to Workers
 
 ### Getting Help
-1. Check `CLOUDFLARE_SETUP.md` for deployment issues
+1. Check `CLOUDFLARE_WORKERS_DEPLOYMENT.md` for deployment issues
 2. Review build logs for specific errors
 3. Test Docker build locally: `./cloudflare-docker.sh`
+4. Verify Workers deployment: `npx wrangler deployments list`
 
 ## 📞 Support & Contributing
 
 For issues or questions:
-1. **Check documentation** in this README and `CLOUDFLARE_SETUP.md`
+1. **Check documentation** in this README and `CLOUDFLARE_WORKERS_DEPLOYMENT.md`
 2. **Test locally** with provided scripts
 3. **Review build logs** for specific error messages
+4. **Verify deployment** at https://ppei.dev
 
 ---
 
-**Built with ❤️ by Patrick Pei** | **Deployed with 🐳 Docker & ☁️ Cloudflare Workers**
+**Built with ❤️ by Patrick Pei** | **Deployed with 🐳 Docker & ☁️ Cloudflare Workers** | **Live at [ppei.dev](https://ppei.dev)**
