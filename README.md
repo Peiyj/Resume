@@ -1,6 +1,6 @@
 # Patrick Pei - Resume Website 🚀
 
-A modern, professional resume website built with React and deployed via **Cloudflare Workers** for global edge distribution.
+A modern, professional resume website built with React and deployed via **Cloudflare Workers** with full Docker containerization.
 
 ## 🌐 Live Website
 **[https://ppei.dev](https://ppei.dev)** | **[https://www.ppei.dev](https://www.ppei.dev)**
@@ -17,8 +17,8 @@ A modern, professional resume website built with React and deployed via **Cloudf
 - 🎨 **Modern React Design**: Component-based architecture with smooth animations
 - 🌙 **Dark Mode by Default**: Professional dark theme with light mode option
 - 📱 **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
+- 🐳 **Full Docker Containerization**: Multi-stage builds for all environments
 - ⚡ **Edge Performance**: Cloudflare Workers with global CDN and sub-10ms response times
-- 🐳 **Docker Containerized**: Multi-stage builds optimized for Workers deployment
 - 🎯 **ATS-Friendly**: SEO optimized and machine-readable
 - 🖨️ **Print-Ready**: Optimized CSS for printing
 - ♿ **Accessible**: WCAG compliant design with proper semantic HTML
@@ -28,6 +28,8 @@ A modern, professional resume website built with React and deployed via **Cloudf
 
 ```
 resume-react/
+├── docker/
+│   └── nginx.conf              # Production nginx configuration
 ├── public/
 │   ├── index.html              # HTML template
 │   ├── patrick_resume.pdf      # Latest PDF version (100KB, 1 page)
@@ -35,8 +37,7 @@ resume-react/
 │   └── manifest.json           # PWA manifest
 ├── src/
 │   ├── assets/
-│   │   ├── images/             # Profile photos, etc.
-│   │   └── icons/              # App icons, logos
+│   │   └── images/             # Profile photos, etc.
 │   ├── components/
 │   │   ├── Header.js           # Contact info & theme toggle
 │   │   ├── Background.js       # Animated background
@@ -48,57 +49,43 @@ resume-react/
 │   ├── App.js                  # Main application
 │   ├── index.css               # Global styles
 │   └── index.js                # App entry point
-├── Dockerfile.cloudflare       # Docker build for Cloudflare Workers
-├── cloudflare-docker.sh        # Build & deployment script
+├── Dockerfile                  # Multi-stage Docker build
+├── docker-compose.yml          # Docker orchestration
 ├── package.json                # Dependencies & scripts
-└── CLOUDFLARE_SETUP.md        # Deployment documentation
+└── worker.js                   # Cloudflare Worker
 ```
 
-## 🚀 Quick Start
+## 🐳 Docker Quick Start
 
-### Local Development
+### Development Environment
 ```bash
 # Clone repository
 git clone https://github.com/peiyj/resume.git
 cd resume/Resume
 
-# Install dependencies
-npm install --legacy-peer-deps
+# Copy environment template
+cp .env.example .env
 
-# Start development server
-npm start
+# Start development server with hot reload
+npm run docker:dev
 ```
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### 🐳 Docker Development
-
-For consistent development environment:
-
+### Production Environment
 ```bash
-# Build and test Docker container
-./cloudflare-docker.sh
-
-# Manual Docker commands
-docker build -f Dockerfile.cloudflare -t resume .
-docker run --rm resume
+# Build and start production server
+npm run docker:prod
 ```
+Open [http://localhost:8080](http://localhost:8080) in your browser.
 
-## 🚀 Cloudflare Workers Deployment
-
-### Quick Deploy [[memory:3504629]]
+### Cloudflare Workers Deployment
 ```bash
+# Set your Cloudflare API token in .env
+echo "CLOUDFLARE_API_TOKEN=your_token_here" >> .env
+
+# Deploy to Cloudflare Workers
 npm run deploy
 ```
-
-### Manual Configuration
-
-**Cloudflare Workers Settings:**
-- **Build command**: `./cloudflare-docker.sh`
-- **Build output**: Docker container with built React app
-- **Custom Domain**: `ppei.dev` with automatic HTTPS
-- **Global Edge**: 275+ locations worldwide
-
-See `CLOUDFLARE_WORKERS_DEPLOYMENT.md` for detailed configuration steps.
 
 ## 🛠️ Technology Stack
 
@@ -108,14 +95,16 @@ See `CLOUDFLARE_WORKERS_DEPLOYMENT.md` for detailed configuration steps.
 - **Local Storage**: Theme preference persistence
 - **Responsive Design**: Mobile-first approach
 
-### Deployment
+### Infrastructure
 - **Docker**: Multi-stage containerized builds
+- **Docker Compose**: Multi-environment orchestration
+- **Nginx**: Production web server with optimizations
 - **Cloudflare Workers**: Edge deployment
-- **npm**: Package management with legacy peer deps
+- **npm**: Package management
 
 ### Content Management
 - **LaTeX**: PDF resume generation
-- **Organized Assets**: Images and icons in `/src/assets/`
+- **Organized Assets**: Images in `/src/assets/`
 - **Component Architecture**: Modular, reusable components
 
 ## 📊 Professional Experience Summary
@@ -143,26 +132,48 @@ See `CLOUDFLARE_WORKERS_DEPLOYMENT.md` for detailed configuration steps.
 
 ### Asset Management
 - **Profile Photos**: Add to `src/assets/images/`
-- **Icons/Logos**: Add to `src/assets/icons/`
 - **Import in components**: `import photo from '../assets/images/photo.jpg'`
 
 ### PDF Resume Updates
 1. Edit `public/patrick_resume.tex`
 2. Compile: `pdflatex patrick_resume.tex`
-3. Rebuild React app: `npm run build`
+3. Rebuild: `npm run docker:build`
 
 ## 🔧 Available Scripts
 
 ```bash
-# Development
-npm start                    # Start dev server
-npm run build               # Production build
-npm run deploy              # Build & deploy to Cloudflare Workers
+# Docker Development
+npm run docker:dev              # Start development environment
+npm run docker:prod             # Start production environment
+npm run docker:workers          # Build for Workers deployment
 
-# Testing
-npm test                    # Run React tests
-./cloudflare-docker.sh      # Test Docker build locally
+# Docker Build Commands
+npm run docker:build            # Build production image
+npm run docker:build-dev        # Build development image
+npm run docker:build-workers    # Build Workers image
+
+# Direct Development (requires Node.js)
+npm start                       # Start dev server
+npm run build                   # Production build
+
+# Cloudflare Workers
+npm run deploy                  # Deploy to Workers
+npm run workers:dev             # Local Workers development
+npm run workers:deploy          # Deploy Workers only
 ```
+
+## 🐳 Docker Architecture
+
+### Multi-Stage Build Process
+1. **Builder Stage**: Node.js 18 Alpine - builds React app
+2. **Development Stage**: Node.js with hot reload and dev tools
+3. **Production Stage**: Nginx Alpine - serves optimized static files
+4. **Workers Stage**: Alpine with Wrangler - ready for Cloudflare deployment
+
+### Environment Management
+- **Development**: Hot reload, dev tools, volume mounting
+- **Production**: Nginx optimization, security headers, compression
+- **Workers**: Minimal container for Cloudflare deployment
 
 ## 🎨 Customization
 
@@ -186,45 +197,45 @@ Currently using Inter from Google Fonts. Update in `public/index.html`.
 ## 📈 Performance
 
 - **React 18**: Latest React with concurrent features
-- **Code Splitting**: Optimized bundle sizes  
-- **Docker Optimized**: 9.22MB production image
+- **Docker Optimization**: Multi-stage builds with minimal final images
+- **Nginx Compression**: Gzip compression and caching headers
 - **Edge Deployment**: Cloudflare Workers global distribution
 - **Fast Loading**: < 50KB gzipped bundle
 
 ## 🔄 Recent Updates
 
-### Version 2.3 (January 2025) - Latest [[memory:3504629]]
+### Version 2.4 (January 2025) - Latest [[memory:3504629]]
+- 🐳 **Full Docker Containerization**: Multi-environment Docker setup with development, production, and Workers stages
+- 🧹 **Code Cleanup**: Removed unused dependencies (testing libraries, web-vitals), unused code, and duplicate assets
+- 📦 **Simplified Build Process**: Docker-first approach with docker-compose orchestration
+- 🔧 **Optimized Dependencies**: Removed 5 unused packages, cleaned project structure
+- 🚀 **Enhanced Performance**: Nginx production server with compression and security headers
+
+### Version 2.3 (January 2025)
 - 🌐 **Production Domain**: Live at https://ppei.dev with Cloudflare Workers
 - 🧹 **Consolidated Documentation**: Single source of truth in README.md
 - ⚡ **Optimized Performance**: Global edge deployment with sub-10ms response times
 - 🔧 **Streamlined Deployment**: Single `npm run deploy` command
 
-### Version 2.2 (January 2025) 
-- 🧹 **Simplified Deployment**: Removed GitHub Pages, focus on Cloudflare Workers only
-- 🐳 **Streamlined Docker**: Single Dockerfile for Workers deployment
-- 📝 **Consolidated Scripts**: Simple `npm run deploy` command
-- 🔧 **Cleaner Architecture**: Removed multi-platform complexity
-
 ## 🆘 Troubleshooting
 
 ### Common Issues
-- **Dependency conflicts**: Use `npm install --legacy-peer-deps`
-- **Docker build fails**: Ensure Docker is running
-- **Assets not loading**: Check paths in `src/assets/`
-- **Domain issues**: Verify Cloudflare DNS settings point to Workers
+- **Docker not found**: Install Docker Desktop and ensure it's running
+- **Port conflicts**: Change ports in docker-compose.yml or .env file
+- **Build failures**: Check Docker has sufficient memory (>4GB recommended)
 
 ### Getting Help
 1. Check `CLOUDFLARE_WORKERS_DEPLOYMENT.md` for deployment issues
-2. Review build logs for specific errors
-3. Test Docker build locally: `./cloudflare-docker.sh`
-4. Verify Workers deployment: `npx wrangler deployments list`
+2. Review Docker logs: `docker-compose logs`
+3. Test individual services: `docker-compose up [service-name]`
+4. Verify deployment at https://ppei.dev
 
 ## 📞 Support & Contributing
 
 For issues or questions:
 1. **Check documentation** in this README and `CLOUDFLARE_WORKERS_DEPLOYMENT.md`
-2. **Test locally** with provided scripts
-3. **Review build logs** for specific error messages
+2. **Test locally** with Docker: `npm run docker:dev`
+3. **Review logs** for specific error messages
 4. **Verify deployment** at https://ppei.dev
 
 ---
