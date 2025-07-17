@@ -8,7 +8,7 @@ FROM node:18-alpine AS builder
 WORKDIR /app
 
 # Install build dependencies
-RUN apk add --no-cache bash curl
+RUN apk update && apk add --no-cache bash curl
 
 # Copy package files first for better layer caching
 COPY package.json package-lock.json ./
@@ -27,7 +27,7 @@ RUN npm run build
 FROM nginx:alpine AS production
 
 # Install bash for scripts
-RUN apk add --no-cache bash
+RUN apk update && apk add --no-cache bash curl
 
 # Copy built React app from builder stage
 COPY --from=builder /app/build /usr/share/nginx/html
@@ -64,7 +64,7 @@ FROM node:18-alpine AS development
 WORKDIR /app
 
 # Install bash and development tools
-RUN apk add --no-cache bash curl git
+RUN apk update && apk add --no-cache bash curl git
 
 # Copy package files
 COPY package.json package-lock.json ./
@@ -94,10 +94,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
 CMD ["npm", "start"]
 
 # Cloudflare Workers stage - Optimized for Workers deployment
-FROM alpine:latest AS workers
-
-# Install necessary tools
-RUN apk add --no-cache bash curl nodejs npm
+FROM node:18-alpine AS workers
 
 WORKDIR /app
 
@@ -107,7 +104,7 @@ COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/wrangler.toml ./wrangler.toml
 COPY --from=builder /app/worker.js ./worker.js
 
-# Install only production Wrangler
+# Install only Wrangler CLI globally
 RUN npm install -g wrangler@latest
 
 # Create deployment info
