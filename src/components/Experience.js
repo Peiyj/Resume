@@ -46,7 +46,7 @@ const Experience = () => {
       company: "Roche",
       title: "Software Engineering Intern", 
       date: "June 2019 - September 2019",
-      location: "South San Francisco, CA",
+      location: "Tucson, AZ",
       description: "Developed bioinformatics tools for genomic data analysis, accelerating drug discovery research timelines by 40%. Created automated pipelines for processing large-scale sequencing data (10TB+), reducing manual analysis time from weeks to hours. Built interactive visualization tools for research scientists that enabled faster identification of genetic variants and biomarkers. Implemented cloud-based solutions using AWS that improved data accessibility and collaboration between research teams across multiple locations. Contributed to the development of precision medicine algorithms that supported 5+ clinical trials.",
       technologies: ["Python", "Java", "SQL", "Docker", "Jenkins"]
     },

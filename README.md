@@ -132,7 +132,7 @@ docker run -p 80:80 patrick-resume
 8 roles spanning 5+ years across:
 - **Coursera**: Senior SWE to Intern (Mountain View, CA)
 - **Samsara**: IoT fleet management (San Francisco, CA)  
-- **Roche**: Bioinformatics tools (South San Francisco, CA)
+- **Roche**: Bioinformatics tools (Tucson, AZ)
 - **UCSD Medical**: Research & ML (San Diego, CA)
 
 ### Technical Skills
