@@ -414,11 +414,20 @@ strong {
     color: white;
 }
 
+.job:hover .job-header .location {
+    background: var(--accent-color);
+    color: white;
+}
+
 .job-header .location {
     font-size: 0.875rem;
     color: var(--text-tertiary);
-    font-style: italic;
+    font-weight: 500;
+    background: var(--tech-bg);
+    padding: 4px 12px;
+    border-radius: 6px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .job h4 {
@@ -646,6 +655,7 @@ strong {
     .job-header .location {
         font-size: 0.85rem;
         margin-bottom: 4px;
+        padding: 3px 10px;
     }
     
     .job h4 {
