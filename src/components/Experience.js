@@ -48,6 +48,15 @@ const Experience = () => {
       technologies: ["Java", "Scala", "gRPC", "JavaScript", "TypeScript", "MongoDB", "HTML", "CSS"]
     },
     {
+      company: "UC San Diego - Jacobs School of Engineering",
+      website: "https://ucsd.edu/",
+      title: "Teaching Assistant",
+      date: "March 2020 - September 2020",
+      location: "San Diego, CA",
+      description: "Taught FPGA architecture and design flow concepts in SystemVerilog and C to an average of 20 students per day. Covered topics including FPGA components, synthesis, simulation, verification, timing analysis, and optimization. Used Vsim tools to demonstrate design flow and create FPGA projects using SystemVerilog and C. Held office hours to assist more than 50 students with their projects by analyzing and debugging code. Used Vsim tools to inspect code, run tests, check logs, and identify errors. Helped students resolve issues including syntax errors, logic errors, timing violations, resource constraints, and memory leaks.",
+      technologies: ["SystemVerilog", "C", "FPGA", "Vsim", "Hardware Design", "Digital Logic"]
+    },
+    {
       company: "Roche",
       website: "https://www.roche.com/",
       title: "Software Engineering Intern", 
@@ -64,6 +73,15 @@ const Experience = () => {
       location: "San Diego, CA",
       description: "Collaborated on enhancing underground vehicle sensor accuracy using C++, increasing precision from 70% to 90%. Optimized image processing speed by 80% by using multithreading and the fan-out pattern in C++.",
       technologies: ["C++", "Image Processing", "Multithreading"]
+    },
+    {
+      company: "UC San Diego Health",
+      website: "https://health.ucsd.edu/",
+      title: "Software Engineer Intern",
+      date: "April 2018 - June 2018",
+      location: "San Diego, CA",
+      description: "Developed and deployed a real-time data gathering application using .NET Framework, MongoDB, and REST API. Integrated the application with the hospital's network and sensors to collect and store over 10 GB of data per day in MongoDB. Analyzed the data using machine learning algorithms, resulting in a 40% electricity reduction in UCSD hospitals. Generated insights and recommendations for optimizing energy usage of light fixtures using Matplotlib, achieving a 40% reduction in electricity consumption.",
+      technologies: [".NET Framework", "MongoDB", "REST API", "Machine Learning", "Python", "Matplotlib", "Data Analysis"]
     }
   ];
 
