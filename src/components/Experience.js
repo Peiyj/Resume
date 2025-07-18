@@ -58,9 +58,9 @@ const Experience = () => {
     },
     {
       company: "C2 Group",
-      website: "https://www.c2-group.com/",
+      website: "https://www.c2group.us/",
       title: "Software Engineering Intern",
-      date: "July 2018 - August 2018", 
+      date: "July 2018 - October 2018", 
       location: "San Diego, CA",
       description: "Collaborated on enhancing underground vehicle sensor accuracy using C++, increasing precision from 70% to 90%. Optimized image processing speed by 80% by using multithreading and the fan-out pattern in C++.",
       technologies: ["C++", "Image Processing", "Multithreading"]
