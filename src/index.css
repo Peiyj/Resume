@@ -431,6 +431,23 @@ strong {
     width: 100%;
 }
 
+/* Company logo styles */
+.company-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-right: 8px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.job:hover .company-logo {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 .job-header .date {
     font-size: 0.925rem;
     color: var(--text-tertiary);

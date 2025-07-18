@@ -5,6 +5,7 @@ const Experience = () => {
     {
       company: "Coursera",
       website: "https://www.coursera.org/",
+      logo: "/src/assets/logos/coursera.png",
       title: "Senior Software Engineer",
       date: "March 2024 - Present",
       location: "Mountain View, CA",
@@ -14,6 +15,7 @@ const Experience = () => {
     {
       company: "Coursera",
       website: "https://www.coursera.org/",
+      logo: "/src/assets/logos/coursera.png",
       title: "Software Engineer II", 
       date: "March 2023 - March 2024",
       location: "Mountain View, CA",
@@ -23,6 +25,7 @@ const Experience = () => {
     {
       company: "Coursera",
       website: "https://www.coursera.org/",
+      logo: "/src/assets/logos/coursera.png",
       title: "Software Engineer I",
       date: "January 2022 - March 2023",
       location: "Mountain View, CA", 
@@ -32,6 +35,7 @@ const Experience = () => {
     {
       company: "Samsara",
       website: "https://www.samsara.com/",
+      logo: "/src/assets/logos/samsara.png",
       title: "Software Engineering Intern",
       date: "June 2021 - October 2021",
       location: "San Francisco, CA",
@@ -41,6 +45,7 @@ const Experience = () => {
     {
       company: "Coursera", 
       website: "https://www.coursera.org/",
+      logo: "/src/assets/logos/coursera.png",
       title: "Software Engineering Intern",
       date: "January 2021 - March 2021",
       location: "Mountain View, CA",
@@ -50,6 +55,7 @@ const Experience = () => {
     {
       company: "UC San Diego",
       website: "https://ucsd.edu/",
+      logo: "/src/assets/logos/ucsd.png",
       title: "Teaching Assistant",
       date: "March 2020 - September 2020",
       location: "San Diego, CA",
@@ -59,6 +65,7 @@ const Experience = () => {
     {
       company: "Roche",
       website: "https://www.roche.com/",
+      logo: "/src/assets/logos/roche.png",
       title: "Software Engineering Intern", 
       date: "June 2019 - September 2019",
       location: "Tucson, AZ",
@@ -68,6 +75,7 @@ const Experience = () => {
     {
       company: "C2 Group",
       website: "https://www.c2group.us/",
+      logo: "/src/assets/logos/c2group.png",
       title: "Software Engineering Intern",
       date: "July 2018 - October 2018", 
       location: "San Diego, CA",
@@ -77,6 +85,7 @@ const Experience = () => {
     {
       company: "UC San Diego Health",
       website: "https://health.ucsd.edu/",
+      logo: "/src/assets/logos/ucsd-health.png",
       title: "Software Engineer Intern",
       date: "April 2018 - June 2018",
       location: "San Diego, CA",
@@ -91,7 +100,17 @@ const Experience = () => {
       {experiences.map((experience, index) => (
         <div key={index} className="job">
           <div className="job-header">
-            <h3>🏢 <a href={experience.website} target="_blank" rel="noopener noreferrer">{experience.company}</a></h3>
+            <h3>
+              <img 
+                src={experience.logo} 
+                alt={`${experience.company} logo`}
+                className="company-logo"
+                onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'inline';}}
+              />
+              <span className="emoji-fallback" style={{display: 'none'}}>🏢</span>
+              {' '}
+              <a href={experience.website} target="_blank" rel="noopener noreferrer">{experience.company}</a>
+            </h3>
             <span className="date">📅 {experience.date}</span>
             {experience.location && <span className="location">📍 {experience.location}</span>}
           </div>
