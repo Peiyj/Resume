@@ -1,12 +1,22 @@
 import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Background = () => {
+  const { t } = useLanguage();
+
+  // Helper function to render text with bold formatting
+  const renderFormattedText = (text) => {
+    return text.split('**').map((part, index) => 
+      index % 2 === 1 ? <strong key={index}>{part}</strong> : part
+    );
+  };
+
   return (
     <section className="background">
-      <h2>Background</h2>
-      <p>I'm a <strong>Senior Software Engineer</strong> working at Coursera and a <strong>Computer Engineering</strong> graduate from <strong>Northwestern University</strong>. I have a love for all aspects of <strong>technology</strong> and <strong>applied problem solving</strong> and currently work in Mountain View, CA.</p>
-      <p>As a <strong>full stack</strong> software engineer I like to bring together a wide variety of software development experience in order to bring refined, functional, and scalable products to life. I have had the opportunity to hone my skills while working at <strong>large corporations</strong> and various <strong>internships</strong>.</p>
-      <p>When I'm not at my computer, I'm probably playing <strong>golf</strong>, <strong>ping pong</strong>, <strong>at the gym</strong>, or <strong>exploring new technologies</strong>.</p>
+      <h2>{t('background')}</h2>
+      <p>{renderFormattedText(t('backgroundText1'))}</p>
+      <p>{renderFormattedText(t('backgroundText2'))}</p>
+      <p>{renderFormattedText(t('backgroundText3'))}</p>
     </section>
   );
 };

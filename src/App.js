@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { LanguageProvider } from './contexts/LanguageContext';
 import Header from './components/Header';
 import Background from './components/Background';
 import Skills from './components/Skills';
@@ -38,15 +39,17 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <Header darkMode={darkMode} toggleTheme={toggleTheme} />
-      <Background />
-      <Experience />
-      <Entrepreneurship />
-      <Education />
-      <Skills />
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="container">
+        <Header darkMode={darkMode} toggleTheme={toggleTheme} />
+        <Background />
+        <Experience />
+        <Entrepreneurship />
+        <Education />
+        <Skills />
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
 

@@ -67,6 +67,12 @@ body {
     margin-bottom: 40px;
 }
 
+.toggle-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
 .header h1 {
     font-size: 3rem;
     font-weight: 700;
@@ -116,6 +122,46 @@ body {
 }
 
 .theme-label {
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+/* Language toggle */
+.language-toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 36px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.language-toggle:hover {
+    background: var(--section-bg);
+    color: var(--text-primary);
+    border-color: var(--text-tertiary);
+    transform: none;
+}
+
+.language-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.language-icon {
+    font-size: 1.1rem;
+}
+
+.language-label {
     font-weight: 500;
     font-size: 0.875rem;
 }
@@ -652,10 +698,17 @@ strong {
         align-items: center;
     }
     
-    .theme-toggle {
+    .toggle-buttons {
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .theme-toggle,
+    .language-toggle {
         align-self: center;
         width: auto;
-        padding: 8px 16px;
+        padding: 6px 12px;
+        font-size: 0.8rem;
     }
     
     .intro h2 {
@@ -803,10 +856,15 @@ strong {
         gap: 12px;
     }
     
-    .theme-toggle {
-        font-size: 0.8rem;
-        padding: 6px 12px;
-        height: 32px;
+    .toggle-buttons {
+        gap: 6px;
+    }
+    
+    .theme-toggle,
+    .language-toggle {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+        height: 30px;
     }
     
     .profile-image {
