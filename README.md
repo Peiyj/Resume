@@ -207,4 +207,4 @@ For issues or questions:
 
 ---
 
-**Built with ❤️ by Patrick Pei** | **Deployed with ⚡ Cloudflare Workers** | **Live at [ppei.dev](https://ppei.dev)**
+**Built with ❤️ by Patrick Pei** | **Deployed with ⚡ Cloudflare Workers** | **Live at [ppei.dev](https://ppei.dev)**# GitHub Pages disabled - Cloudflare Workers only
