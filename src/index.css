@@ -584,8 +584,8 @@ strong {
 }
 
 .technologies span {
-    background: var(--accent-color);
-    color: white;
+    background: var(--tech-bg);
+    color: var(--tech-color);
     padding: 6px 12px;
     border-radius: 6px;
     font-size: 0.8rem;
@@ -596,7 +596,8 @@ strong {
 }
 
 .technologies span:hover {
-    background: var(--accent-hover);
+    background: var(--accent-color);
+    color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
 }
