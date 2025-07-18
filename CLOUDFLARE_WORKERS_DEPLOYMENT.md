@@ -51,8 +51,7 @@ Resume/
 ├── build/                 # React build output
 ├── worker.js             # Cloudflare Worker script
 ├── wrangler.toml         # Workers configuration
-├── cloudflare-build.sh   # Build script (no Docker!)
-└── package.json          # Updated with Workers deps
+└── package.json          # Dependencies & scripts
 ```
 
 ## 🔧 **Development Workflow**
@@ -83,7 +82,6 @@ compatibility_date = "2024-07-17"
 
 [site]
 bucket = "./build"            # Serves files from React build
-entry-point = "worker.js"
 
 [vars]
 ENVIRONMENT = "production"

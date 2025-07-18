@@ -1,6 +1,6 @@
 # Patrick Pei - Resume Website 🚀
 
-A modern, professional resume website built with React and deployed via **Cloudflare Workers** with full Docker containerization for local development.
+A modern, professional resume website built with React and deployed via **Cloudflare Workers**.
 
 ## 🌐 Live Website
 **[https://ppei.dev](https://ppei.dev)** | **[https://www.ppei.dev](https://www.ppei.dev)**
@@ -17,7 +17,6 @@ A modern, professional resume website built with React and deployed via **Cloudf
 - 🎨 **Modern React Design**: Component-based architecture with smooth animations
 - 🌙 **Dark Mode by Default**: Professional dark theme with light mode option
 - 📱 **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
-- 🐳 **Docker Development**: Containerized local development environment
 - ⚡ **Edge Performance**: Cloudflare Workers with global CDN and sub-10ms response times
 - 🎯 **ATS-Friendly**: SEO optimized and machine-readable
 - 🖨️ **Print-Ready**: Optimized CSS for printing
@@ -28,8 +27,6 @@ A modern, professional resume website built with React and deployed via **Cloudf
 
 ```
 resume-react/
-├── docker/
-│   └── nginx.conf              # Production nginx configuration
 ├── public/
 │   ├── index.html              # HTML template
 │   ├── patrick_resume.pdf      # Latest PDF version (100KB, 1 page)
@@ -49,15 +46,14 @@ resume-react/
 │   ├── App.js                  # Main application
 │   ├── index.css               # Global styles
 │   └── index.js                # App entry point
-├── Dockerfile                  # Multi-stage Docker build (local dev)
-├── docker-compose.yml          # Docker orchestration (local dev)
 ├── package.json                # Dependencies & scripts
-└── worker.js                   # Cloudflare Worker
+├── wrangler.toml               # Cloudflare Workers configuration
+└── worker.js                   # Cloudflare Worker script
 ```
 
 ## 🚀 Quick Start
 
-### **Cloudflare Workers Deployment (Production)**
+### **Cloudflare Workers Deployment**
 ```bash
 # Clone repository
 git clone https://github.com/peiyj/resume.git
@@ -70,33 +66,18 @@ npm install --legacy-peer-deps
 npm run deploy
 ```
 
-### **Local Development (Node.js)**
+### **Local Development**
 ```bash
 # Start development server
 npm start
 ```
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 🐳 Docker Development (Optional)
-
-For containerized local development:
-
-### **Development Environment**
+### **Preview Deployment**
 ```bash
-# Copy environment template
-cp .env.example .env
-
-# Start development server with Docker
-npm run docker:dev
+# Deploy to preview environment for testing
+npm run deploy:preview
 ```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### **Production Environment**
-```bash
-# Build and start production server
-npm run docker:prod
-```
-Open [http://localhost:8080](http://localhost:8080) in your browser.
 
 ## 🛠️ Technology Stack
 
@@ -108,9 +89,7 @@ Open [http://localhost:8080](http://localhost:8080) in your browser.
 
 ### Infrastructure
 - **Cloudflare Workers**: Edge deployment and global CDN
-- **Docker**: Containerized local development (optional)
-- **Docker Compose**: Multi-environment orchestration (optional)
-- **Nginx**: Production web server for Docker (optional)
+- **Wrangler CLI**: Deployment and development tools
 - **npm**: Package management
 
 ### Content Management
@@ -153,40 +132,18 @@ Open [http://localhost:8080](http://localhost:8080) in your browser.
 ## 🔧 Available Scripts
 
 ```bash
+# Development
+npm start                        # Start development server
+npm run build                    # Production build
+
 # Cloudflare Workers Deployment
 npm run deploy                   # Build + Deploy to production
 npm run deploy:preview           # Build + Deploy to preview environment
 
-# Local Development  
-npm start                        # Start development server
-npm run build                    # Production build
-
-# Docker Development (Optional)
-npm run docker:dev               # Start development environment
-npm run docker:prod              # Start production environment
-npm run docker:workers           # Build for Workers deployment
-
-# Docker Build Commands (Optional)
-npm run docker:build             # Build production image
-npm run docker:build-dev         # Build development image
-npm run docker:build-workers     # Build Workers image
-
-# Cloudflare Workers Direct
-npm run workers:dev              # Local Workers development
+# Cloudflare Workers Development
+npm run workers:dev              # Local Workers development server
 npm run workers:deploy           # Deploy Workers only
 ```
-
-## ⚡ Deployment Options
-
-### **Option 1: Simple Deployment (Recommended)**
-- **Fast**: Uses Cloudflare's Node.js environment directly
-- **Build Time**: ~35 seconds  
-- **Commands**: `npm run build` → `wrangler deploy`
-
-### **Option 2: Docker Deployment (Advanced)**
-- **Consistent**: Uses containerized builds
-- **Build Time**: ~3+ minutes
-- **Commands**: `docker compose --profile workers build workers` → `wrangler deploy`
 
 ## 🎨 Customization
 
@@ -210,44 +167,42 @@ Currently using Inter from Google Fonts. Update in `public/index.html`.
 ## 📈 Performance
 
 - **React 18**: Latest React with concurrent features
-- **Fast Builds**: Direct npm builds (~35s) or Docker builds (~3min)
+- **Fast Builds**: Direct npm builds (~35 seconds)
 - **Edge Deployment**: Cloudflare Workers global distribution
 - **Fast Loading**: < 50KB gzipped bundle
 
 ## 🔄 Recent Updates
 
-### Version 2.5 (January 2025) - Latest [[memory:3504629]]
-- ⚡ **Simplified Deployment**: Direct npm build approach for faster Cloudflare deployment (~35s vs 3+ hours)
-- 🐳 **Docker for Development**: Docker remains available for local development environments
-- 🚀 **Dual Approach**: Choose between simple deployment or containerized builds
-- 📦 **Added Preview Deployment**: `npm run deploy:preview` for branch testing
+### Version 2.6 (January 2025) - Latest [[memory:3504629]]
+- 🧹 **Simplified Architecture**: Removed Docker complexity, focus on fast npm-based deployment
+- ⚡ **Streamlined Workflow**: Single approach for both development and deployment
+- 📦 **Reduced Dependencies**: Cleaner project structure with fewer build tools
+- 🚀 **Faster Development**: Direct Node.js development without containerization overhead
 
-### Version 2.4 (January 2025)
-- 🐳 **Full Docker Containerization**: Multi-environment Docker setup with development, production, and Workers stages
-- 🧹 **Code Cleanup**: Removed unused dependencies (testing libraries, web-vitals), unused code, and duplicate assets
-- 📦 **Simplified Build Process**: Docker-first approach with docker-compose orchestration
-- 🔧 **Optimized Dependencies**: Removed 5 unused packages, cleaned project structure
-- 🚀 **Enhanced Performance**: Nginx production server with compression and security headers
+### Version 2.5 (January 2025)
+- ⚡ **Simplified Deployment**: Direct npm build approach for faster Cloudflare deployment (~35s vs 3+ hours)
+- 🚀 **Single Approach**: Unified development and deployment workflow
+- 📦 **Added Preview Deployment**: `npm run deploy:preview` for branch testing
 
 ## 🆘 Troubleshooting
 
 ### Common Issues
-- **Deployment timeouts**: Use simple deployment (`npm run deploy`) instead of Docker approach
 - **Build failures**: Ensure Node.js 18.x and npm 10.x are installed
-- **Local development**: Use `npm start` for fastest development experience
+- **Dependency conflicts**: Use `npm install --legacy-peer-deps`
+- **Workers deployment**: Verify wrangler.toml configuration
 
 ### Getting Help
 1. Check `CLOUDFLARE_WORKERS_DEPLOYMENT.md` for deployment issues
-2. Use simple deployment for fastest builds: `npm run deploy`
-3. Docker is optional - use `npm start` for local development
+2. Use `npm start` for local development testing
+3. Test deployment with `npm run deploy:preview` first
 4. Verify deployment at https://ppei.dev
 
 ## 📞 Support & Contributing
 
 For issues or questions:
 1. **Check documentation** in this README and `CLOUDFLARE_WORKERS_DEPLOYMENT.md`
-2. **Test locally**: `npm start` (fastest) or `npm run docker:dev` (containerized)
-3. **Deploy**: `npm run deploy` (simple) or Docker approach (advanced)
+2. **Test locally**: `npm start` for development
+3. **Deploy**: `npm run deploy` for production
 4. **Verify deployment** at https://ppei.dev
 
 ---
