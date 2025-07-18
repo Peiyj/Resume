@@ -59,6 +59,8 @@ export const translations = {
     teachingAssistant: "Teaching Assistant",
     
     // Education
+    northwesternUniversity: "Northwestern University",
+    ucSanDiego: "University of California, San Diego",
     mastersDegree: "Master of Science in Computer Engineering",
     bachelorsDegree: "Bachelor of Science in Computer Engineering",
     
@@ -156,6 +158,8 @@ export const translations = {
     teachingAssistant: "助教",
     
     // Education
+    northwesternUniversity: "西北大学",
+    ucSanDiego: "加利福尼亚大学圣地亚哥分校",
     mastersDegree: "计算机工程硕士",
     bachelorsDegree: "计算机工程学士",
     
