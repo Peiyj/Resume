@@ -83,7 +83,30 @@ export const translations = {
     
     // Entrepreneurship
     coFounderCTO: "Co-Founder & CTO",
-    solemateDesc: "Developed the Solemate iOS App using Swift and Objective C for 1.8K daily active patients who have ankle injuries. Designed adaptive UI with CSS to display the rehabilitation data and send it to their doctors using Firestore and ML kit."
+    solemateDesc: "Developed the Solemate iOS App using Swift and Objective C for 1.8K daily active patients who have ankle injuries. Designed adaptive UI with CSS to display the rehabilitation data and send it to their doctors using Firestore and ML kit.",
+    
+    // Dates
+    present: "Present",
+    march2024Present: "March 2024 - Present",
+    march2023March2024: "March 2023 - March 2024", 
+    january2022March2023: "January 2022 - March 2023",
+    june2021October2021: "June 2021 - October 2021",
+    january2021March2021: "January 2021 - March 2021",
+    march2020September2020: "March 2020 - September 2020",
+    june2019September2019: "June 2019 - September 2019",
+    july2018October2018: "July 2018 - October 2018",
+    april2018June2018: "April 2018 - June 2018",
+    september2020June2021: "September 2020 - June 2021",
+    september2016June2020: "September 2016 - June 2020",
+    january2017August2017: "January 2017 - August 2017",
+    
+    // Locations
+    mountainViewCA: "Mountain View, CA",
+    sanFranciscoCA: "San Francisco, CA", 
+    sanDiegoCA: "San Diego, CA",
+    tucsonAZ: "Tucson, AZ",
+    evanstonIL: "Evanston, IL",
+    laJollaCA: "La Jolla, CA"
   },
   zh: {
     // Header
@@ -157,7 +180,30 @@ export const translations = {
     
     // Entrepreneurship
     coFounderCTO: "联合创始人兼首席技术官",
-    solemateDesc: "为1.8K名有踝关节损伤的日活跃患者开发了Solemate iOS应用程序，使用Swift和Objective C。设计了自适应UI，使用CSS显示康复数据，并使用Firestore和ML kit将其发送给医生。"
+    solemateDesc: "为1.8K名有踝关节损伤的日活跃患者开发了Solemate iOS应用程序，使用Swift和Objective C。设计了自适应UI，使用CSS显示康复数据，并使用Firestore和ML kit将其发送给医生。",
+    
+    // Dates
+    present: "至今",
+    march2024Present: "2024年3月 - 至今",
+    march2023March2024: "2023年3月 - 2024年3月", 
+    january2022March2023: "2022年1月 - 2023年3月",
+    june2021October2021: "2021年6月 - 2021年10月",
+    january2021March2021: "2021年1月 - 2021年3月",
+    march2020September2020: "2020年3月 - 2020年9月",
+    june2019September2019: "2019年6月 - 2019年9月",
+    july2018October2018: "2018年7月 - 2018年10月",
+    april2018June2018: "2018年4月 - 2018年6月",
+    september2020June2021: "2020年9月 - 2021年6月",
+    september2016June2020: "2016年9月 - 2020年6月",
+    january2017August2017: "2017年1月 - 2017年8月",
+    
+    // Locations
+    mountainViewCA: "加利福尼亚州山景城",
+    sanFranciscoCA: "加利福尼亚州旧金山", 
+    sanDiegoCA: "加利福尼亚州圣地亚哥",
+    tucsonAZ: "亚利桑那州图森",
+    evanstonIL: "伊利诺伊州埃文斯顿",
+    laJollaCA: "加利福尼亚州拉霍亚"
   }
 };
 

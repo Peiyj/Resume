@@ -10,8 +10,8 @@ const Entrepreneurship = () => {
       <div className="job">
         <div className="job-header">
           <h3>👟 Solemate</h3>
-          <span className="date">📅 January 2017 - August 2017</span>
-          <span className="location">📍 San Diego, CA</span>
+          <span className="date">📅 {t('january2017August2017')}</span>
+          <span className="location">📍 {t('sanDiegoCA')}</span>
         </div>
         <h4>💡 {t('coFounderCTO')}</h4>
         <p>{t('solemateDesc')}</p>

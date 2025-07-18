@@ -10,8 +10,8 @@ const Experience = () => {
       website: "https://www.coursera.org/",
       logo: "/src/assets/logos/coursera.png",
       titleKey: "seniorSoftwareEngineer",
-      date: "March 2024 - Present",
-      location: "Mountain View, CA",
+      dateKey: "march2024Present",
+      locationKey: "mountainViewCA",
       descriptionKey: "courseraLeadDesc",
       technologies: ["Java", "gRPC", "AWS DynamoDB", "AWS Lambda", "Apache Airflow", "Terraform", "Retool", "AWS EKS", "AWS MSK", "Kafka", "PostgreSQL", "GraphQL"]
     },
@@ -20,8 +20,8 @@ const Experience = () => {
       website: "https://www.coursera.org/",
       logo: "/src/assets/logos/coursera.png",
       titleKey: "softwareEngineerII", 
-      date: "March 2023 - March 2024",
-      location: "Mountain View, CA",
+      dateKey: "march2023March2024",
+      locationKey: "mountainViewCA",
       descriptionKey: "courseraSeII",
       technologies: ["Java", "Scala", "Spring Boot", "GraphQL", "Redis", "AWS Aurora", "MySQL", "Distributed Systems"]
     },
@@ -30,8 +30,8 @@ const Experience = () => {
       website: "https://www.coursera.org/",
       logo: "/src/assets/logos/coursera.png",
       titleKey: "softwareEngineerI",
-      date: "January 2022 - March 2023",
-      location: "Mountain View, CA", 
+      dateKey: "january2022March2023",
+      locationKey: "mountainViewCA", 
       descriptionKey: "courseraSeI",
       technologies: ["Java", "Scala", "gRPC", "GraphQL", "JavaScript", "AWS RDS", "MySQL"]
     },
@@ -40,8 +40,8 @@ const Experience = () => {
       website: "https://www.samsara.com/",
       logo: "/src/assets/logos/samsara.png",
       titleKey: "softwareEngineeringIntern",
-      date: "June 2021 - October 2021",
-      location: "San Francisco, CA",
+      dateKey: "june2021October2021",
+      locationKey: "sanFranciscoCA",
       descriptionKey: "samsaraDesc",
       technologies: ["GoLang", "MongoDB", "React", "AWS", "PostgreSQL", "Docker"]
     },
@@ -50,8 +50,8 @@ const Experience = () => {
       website: "https://www.coursera.org/",
       logo: "/src/assets/logos/coursera.png",
       titleKey: "softwareEngineeringIntern",
-      date: "January 2021 - March 2021",
-      location: "Mountain View, CA",
+      dateKey: "january2021March2021",
+      locationKey: "mountainViewCA",
       descriptionKey: "courseraInternDesc",
       technologies: ["Java", "Scala", "gRPC", "JavaScript", "TypeScript", "MongoDB", "HTML", "CSS"]
     },
@@ -60,8 +60,8 @@ const Experience = () => {
       website: "https://ucsd.edu/",
       logo: "/src/assets/logos/ucsd.png",
       titleKey: "teachingAssistant",
-      date: "March 2020 - September 2020",
-      location: "San Diego, CA",
+      dateKey: "march2020September2020",
+      locationKey: "sanDiegoCA",
       descriptionKey: "ucsdTaDesc",
       technologies: ["SystemVerilog", "C", "FPGA", "Vsim", "Hardware Design", "Digital Logic"]
     },
@@ -70,8 +70,8 @@ const Experience = () => {
       website: "https://www.roche.com/",
       logo: "/src/assets/logos/roche.png",
       titleKey: "softwareEngineeringIntern", 
-      date: "June 2019 - September 2019",
-      location: "Tucson, AZ",
+      dateKey: "june2019September2019",
+      locationKey: "tucsonAZ",
       descriptionKey: "rocheDesc",
       technologies: ["Python", "Java", "SQL", "Docker", "Jenkins"]
     },
@@ -80,8 +80,8 @@ const Experience = () => {
       website: "https://www.c2group.us/",
       logo: "/src/assets/logos/c2group.png",
       titleKey: "softwareEngineeringIntern",
-      date: "July 2018 - October 2018", 
-      location: "San Diego, CA",
+      dateKey: "july2018October2018", 
+      locationKey: "sanDiegoCA",
       descriptionKey: "c2GroupDesc",
       technologies: ["C++", "Image Processing", "Multithreading"]
     },
@@ -90,8 +90,8 @@ const Experience = () => {
       website: "https://health.ucsd.edu/",
       logo: "/src/assets/logos/ucsd-health.png",
       titleKey: "softwareEngineerIntern",
-      date: "April 2018 - June 2018",
-      location: "San Diego, CA",
+      dateKey: "april2018June2018",
+      locationKey: "sanDiegoCA",
       descriptionKey: "ucsdHealthDesc",
       technologies: [".NET Framework", "MongoDB", "REST API", "Machine Learning", "Python", "Matplotlib", "Data Analysis"]
     }
@@ -114,8 +114,8 @@ const Experience = () => {
               {' '}
               <a href={experience.website} target="_blank" rel="noopener noreferrer">{experience.company}</a>
             </h3>
-            <span className="date">📅 {experience.date}</span>
-            {experience.location && <span className="location">📍 {experience.location}</span>}
+            <span className="date">📅 {t(experience.dateKey)}</span>
+            <span className="location">📍 {t(experience.locationKey)}</span>
           </div>
           <h4>👨‍💻 {t(experience.titleKey)}</h4>
           <p>{t(experience.descriptionKey)}</p>

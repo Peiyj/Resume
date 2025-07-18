@@ -9,16 +9,16 @@ const Education = () => {
       school: "Northwestern University",
       website: "https://www.northwestern.edu/",
       degreeKey: "mastersDegree",
-      date: "September 2020 - June 2021",
-      location: "Evanston, IL",
+      dateKey: "september2020June2021",
+      locationKey: "evanstonIL",
       gpa: "4.0/4.0"
     },
     {
       school: "University of California, San Diego",
       website: "https://ucsd.edu/",
       degreeKey: "bachelorsDegree", 
-      date: "September 2016 - June 2020",
-      location: "La Jolla, CA",
+      dateKey: "september2016June2020",
+      locationKey: "laJollaCA",
       gpa: "3.7/4.0"
     }
   ];
@@ -30,8 +30,8 @@ const Education = () => {
         <div key={index} className="job">
           <div className="job-header">
             <h3>🏫 <a href={edu.website} target="_blank" rel="noopener noreferrer">{edu.school}</a></h3>
-            <span className="date">📅 {edu.date}</span>
-            <span className="location">📍 {edu.location}</span>
+            <span className="date">📅 {t(edu.dateKey)}</span>
+            <span className="location">📍 {t(edu.locationKey)}</span>
           </div>
           <h4>📚 {t(edu.degreeKey)}</h4>
           <p className="gpa">GPA: {edu.gpa}</p>
