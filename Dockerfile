@@ -7,9 +7,6 @@ FROM node:18-alpine AS builder
 # Set working directory
 WORKDIR /app
 
-# Install build dependencies
-RUN apk update && apk add --no-cache bash curl
-
 # Copy package files first for better layer caching
 COPY package.json package-lock.json ./
 
@@ -25,9 +22,6 @@ RUN npm run build
 
 # Production stage - Nginx for serving static files
 FROM nginx:alpine AS production
-
-# Install bash for scripts
-RUN apk update && apk add --no-cache bash curl
 
 # Copy built React app from builder stage
 COPY --from=builder /app/build /usr/share/nginx/html
@@ -51,10 +45,6 @@ USER resume
 # Expose port
 EXPOSE 8080
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD curl -f http://localhost:8080/ || exit 1
-
 # Start nginx
 CMD ["nginx", "-g", "daemon off;"]
 
@@ -62,9 +52,6 @@ CMD ["nginx", "-g", "daemon off;"]
 FROM node:18-alpine AS development
 
 WORKDIR /app
-
-# Install bash and development tools
-RUN apk update && apk add --no-cache bash curl git
 
 # Copy package files
 COPY package.json package-lock.json ./
@@ -86,14 +73,10 @@ USER resume
 # Expose development port
 EXPOSE 3000
 
-# Health check for dev server
-HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
-  CMD curl -f http://localhost:3000/ || exit 1
-
 # Start development server
 CMD ["npm", "start"]
 
-# Cloudflare Workers stage - Optimized for Workers deployment
+# Cloudflare Workers stage - Minimal for Workers deployment
 FROM node:18-alpine AS workers
 
 WORKDIR /app
@@ -119,7 +102,7 @@ RUN addgroup -g 1001 -S resume && \
 
 USER resume
 
-# Health check
+# Basic health check without external dependencies
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD test -f /app/build/index.html || exit 1
 

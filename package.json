@@ -16,7 +16,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "docker compose --profile workers build workers && wrangler deploy",
+    "deploy": "npm run build && wrangler deploy",
+    "deploy:preview": "npm run build && wrangler deploy --env preview", 
     "docker:dev": "docker compose up dev",
     "docker:prod": "docker compose up prod",
     "docker:workers": "docker compose --profile workers up workers",
