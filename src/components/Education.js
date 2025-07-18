@@ -4,6 +4,7 @@ const Education = () => {
   const education = [
     {
       school: "Northwestern University",
+      website: "https://www.northwestern.edu/",
       degree: "Master of Science in Computer Engineering",
       date: "September 2020 - June 2021",
       location: "Evanston, IL",
@@ -11,6 +12,7 @@ const Education = () => {
     },
     {
       school: "University of California, San Diego",
+      website: "https://ucsd.edu/",
       degree: "Bachelor of Science in Computer Engineering", 
       date: "September 2016 - June 2020",
       location: "La Jolla, CA",
@@ -24,7 +26,7 @@ const Education = () => {
       {education.map((edu, index) => (
         <div key={index} className="job">
           <div className="job-header">
-            <h3>🏫 {edu.school}</h3>
+            <h3>🏫 <a href={edu.website} target="_blank" rel="noopener noreferrer">{edu.school}</a></h3>
             <span className="date">📅 {edu.date}</span>
             <span className="location">📍 {edu.location}</span>
           </div>

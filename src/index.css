@@ -399,6 +399,38 @@ strong {
     color: var(--accent-color);
 }
 
+/* Company and school link styles */
+.job-header h3 a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.job-header h3 a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.job:hover .job-header h3 a {
+    color: var(--accent-color);
+}
+
+.job-header h3 a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.job-header h3 a:hover::after {
+    width: 100%;
+}
+
 .job-header .date {
     font-size: 0.925rem;
     color: var(--text-tertiary);

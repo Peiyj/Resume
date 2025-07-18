@@ -4,6 +4,7 @@ const Experience = () => {
   const experiences = [
     {
       company: "Coursera",
+      website: "https://www.coursera.org/",
       title: "Senior Software Engineer",
       date: "March 2024 - Present",
       location: "Mountain View, CA",
@@ -12,6 +13,7 @@ const Experience = () => {
     },
     {
       company: "Coursera",
+      website: "https://www.coursera.org/",
       title: "Software Engineer II", 
       date: "March 2023 - March 2024",
       location: "Mountain View, CA",
@@ -20,6 +22,7 @@ const Experience = () => {
     },
     {
       company: "Coursera",
+      website: "https://www.coursera.org/",
       title: "Software Engineer I",
       date: "January 2022 - March 2023",
       location: "Mountain View, CA", 
@@ -28,6 +31,7 @@ const Experience = () => {
     },
     {
       company: "Samsara",
+      website: "https://www.samsara.com/",
       title: "Software Engineering Intern",
       date: "June 2021 - October 2021",
       location: "San Francisco, CA",
@@ -36,6 +40,7 @@ const Experience = () => {
     },
     {
       company: "Coursera", 
+      website: "https://www.coursera.org/",
       title: "Software Engineering Intern",
       date: "January 2021 - March 2021",
       location: "Mountain View, CA",
@@ -44,6 +49,7 @@ const Experience = () => {
     },
     {
       company: "Roche",
+      website: "https://www.roche.com/",
       title: "Software Engineering Intern", 
       date: "June 2019 - September 2019",
       location: "Tucson, AZ",
@@ -52,6 +58,7 @@ const Experience = () => {
     },
     {
       company: "C2 Group",
+      website: "https://www.c2-group.com/",
       title: "Software Engineering Intern",
       date: "July 2018 - August 2018", 
       location: "San Diego, CA",
@@ -66,7 +73,7 @@ const Experience = () => {
       {experiences.map((experience, index) => (
         <div key={index} className="job">
           <div className="job-header">
-            <h3>🏢 {experience.company}</h3>
+            <h3>🏢 <a href={experience.website} target="_blank" rel="noopener noreferrer">{experience.company}</a></h3>
             <span className="date">📅 {experience.date}</span>
             {experience.location && <span className="location">📍 {experience.location}</span>}
           </div>
