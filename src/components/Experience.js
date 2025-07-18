@@ -48,7 +48,7 @@ const Experience = () => {
       technologies: ["Java", "Scala", "gRPC", "JavaScript", "TypeScript", "MongoDB", "HTML", "CSS"]
     },
     {
-      company: "UC San Diego - Jacobs School of Engineering",
+      company: "UC San Diego",
       website: "https://ucsd.edu/",
       title: "Teaching Assistant",
       date: "March 2020 - September 2020",
