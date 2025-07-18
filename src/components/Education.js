@@ -9,7 +9,7 @@ const Education = () => {
       school: "Northwestern University",
       website: "https://www.northwestern.edu/",
       degreeKey: "mastersDegree",
-      dateKey: "september2020June2021",
+      dateKey: "september2020December2021",
       locationKey: "evanstonIL",
       gpa: "4.0/4.0"
     },

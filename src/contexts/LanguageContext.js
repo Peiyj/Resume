@@ -96,7 +96,7 @@ export const translations = {
     june2019September2019: "June 2019 - September 2019",
     july2018October2018: "July 2018 - October 2018",
     april2018June2018: "April 2018 - June 2018",
-    september2020June2021: "September 2020 - June 2021",
+    september2020December2021: "September 2020 - December 2021",
     september2016June2020: "September 2016 - June 2020",
     january2017August2017: "January 2017 - August 2017",
     
@@ -193,7 +193,7 @@ export const translations = {
     june2019September2019: "2019年6月 - 2019年9月",
     july2018October2018: "2018年7月 - 2018年10月",
     april2018June2018: "2018年4月 - 2018年6月",
-    september2020June2021: "2020年9月 - 2021年6月",
+    september2020December2021: "2020年9月 - 2021年12月",
     september2016June2020: "2016年9月 - 2020年6月",
     january2017August2017: "2017年1月 - 2017年8月",
     
