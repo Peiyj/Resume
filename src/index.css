@@ -493,6 +493,27 @@ strong {
     color: var(--text-secondary);
 }
 
+/* Job description bullet points */
+.job-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0 0 20px 0;
+    padding-left: 20px;
+}
+
+.job-description li {
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.job-description li:last-child {
+    margin-bottom: 0;
+}
+
+.job:hover .job-description li {
+    color: var(--text-primary);
+}
+
 .job p.gpa {
     font-weight: 600;
     color: var(--gpa-color);
